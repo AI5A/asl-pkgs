@@ -11,38 +11,53 @@ jobs:
     timeout-minutes: 15
     strategy:
       fail-fast: false
-      matrix:
-        include:
-          - codename: bullseye
-            arch: armhf
-            sleep: 0
-          - codename: buster
-            arch: armhf
-            sleep: 20
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: Grab asl-dahdi-${{ matrix.codename }} artifacts
+      - name: Grab asl-dahdi-bullseye artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: build.yml
           workflow_conclusion: success
           branch: fixes
-          name: asl-dahdi-${{ matrix.codename }}
+          name: asl-dahdi-bullseye
           repo: AI5A/asl-dahdi
-          path: dahdi
+          path: dahdi-bullseye
 
-      - name: Grab asterisk-${{ matrix.codename }} artifacts
+      - name: Grab asl-dahdi-buster artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: build.yml
+          workflow_conclusion: success
+          branch: fixes
+          name: asl-dahdi-buster
+          repo: AI5A/asl-dahdi
+          path: dahdi-buster
+
+      - name: Grab asterisk-bullseye artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: asl-build.yml
           workflow_conclusion: success
           branch: fixes
-          name: allstarlink-${{ matrix.codename }}
+          name: allstarlink-bullseye
           repo: AI5A/asl
-          path: asl
+          path: allstarlink-bullseye
+
+      - name: Grab asterisk-buster artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: asl-build.yml
+          workflow_conclusion: success
+          branch: fixes
+          name: allstarlink-buster
+          repo: AI5A/asl
+          path: allstarlink-buster
 
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v5
@@ -54,17 +69,21 @@ jobs:
         run: |
           repo="$(pwd)"
           sudo apt-get install -y gcc dpkg-dev gpg
-          mkdir -p asl-pkgs/deb/pool/main
-          pushd asl-pkgs/deb
-            mv ../../dahdi/* ../../asl/* pool/main/
-            mkdir -p dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}
-            dpkg-scanpackages --arch ${{ matrix.arch }} pool/ > dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}/Packages
-            cat dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}/Packages | gzip -9 > dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}/Packages.gz
-            pushd dists/${{ matrix.codename }}
-              bash $repo/generate-release.sh ${{ matrix.codename }} > Release
-              gpg --armour --sign --detach-sign -o Release.gpg Release
+          for codename in buster bullseye; do
+            mkdir -p asl-pkgs/deb/$codename/pool/main
+            pushd asl-pkgs/deb/$codename
+              mv $repo/dahdi-$codename/* $repo/allstarlink-$codename/* pool/main/
+              for arch in armhf; do
+                mkdir -p dists/$codename/main/binary-$arch
+                dpkg-scanpackages --arch $arch pool/ > dists/$codename/main/binary-$arch/Packages
+                cat dists/$codename/main/binary-$arch/Packages | gzip -9 > dists/$codename/main/binary-$arch/Packages.gz
+              done
+              pushd dists/$codename
+                bash $repo/generate-release.sh $codename > Release
+                gpg --armour --sign --detach-sign -o Release.gpg Release
+              popd
             popd
-          popd
+          done
 
       - name: Generate html indexes
         run: |
@@ -73,10 +92,6 @@ jobs:
           cat files-list.txt
           cat files-list.txt | python3 gen-indexes.py .
           tree .
-
-      - name: Wait some time so that we don't clash with other matrix runs
-        run: |
-          sleep ${{ matrix.sleep }}
 
       - name: "Deploy it 🚀"
         uses: JamesIves/github-pages-deploy-action@v4
@@ -97,6 +112,9 @@ jobs:
           - arch: armv7l
             cpu: cortex-a7
             base_image: raspios_lite:latest
+          - arch: armv7l
+            cpu: cortex-a7
+            base_image: raspios_lite:2021-05-07
     steps:
       - uses: pguyot/arm-runner-action@v2
         with:
@@ -106,7 +124,7 @@ jobs:
             curl -o /etc/apt/trusted.gpg.d/ai5a-asl.asc \
               https://raw.githubusercontent.com/AI5A/asl-pkgs/main/pkg_pub_key.asc
 
-            echo "deb [signed-by=/etc/apt/trusted.gpg.d/ai5a-asl.asc] https://ai5a.github.io/asl-pkgs/deb/ $(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) main" \
+            echo "deb [signed-by=/etc/apt/trusted.gpg.d/ai5a-asl.asc] https://ai5a.github.io/asl-pkgs/deb/$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) $(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) main" \
               > /etc/apt/sources.list.d/ai5a-asl.list
 
             apt-get update
