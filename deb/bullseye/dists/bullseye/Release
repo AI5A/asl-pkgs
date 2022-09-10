@@ -4,7 +4,7 @@ Version: 1.0
 Architectures: amd64 armhf
 Components: main
 Description: AI5A AllStarLink Debian Repository
-Date: Sat, 10 Sep 2022 08:31:50 +0000
+Date: Sat, 10 Sep 2022 08:57:18 +0000
 MD5Sum:
  6f38a341902b618ba91ed769e2213d2b 9181 main/binary-armhf/Packages.gz
  21ba5a1d2bf6c64c069ee430954e3ab4 21569 main/binary-armhf/Packages
