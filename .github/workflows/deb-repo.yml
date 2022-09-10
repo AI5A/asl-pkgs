@@ -99,33 +99,3 @@ jobs:
           folder: asl-pkgs
           # keep old versions around
           clean: false
-
-  deb-test:
-    name: Ensure Debian repository is usable
-    needs: deb
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - arch: armv7l
-            cpu: cortex-a7
-            base_image: raspios_lite:latest
-          - arch: armv7l
-            cpu: cortex-a7
-            base_image: raspios_lite:2021-05-07
-    steps:
-      - uses: pguyot/arm-runner-action@v2
-        with:
-          base_image: ${{ matrix.base_image }}
-          cpu: ${{ matrix.cpu }}
-          commands: |
-            curl -o /etc/apt/trusted.gpg.d/ai5a-asl.asc \
-              https://raw.githubusercontent.com/AI5A/asl-pkgs/main/pkg_pub_key.asc
-
-            echo "deb [signed-by=/etc/apt/trusted.gpg.d/ai5a-asl.asc] https://ai5a.github.io/asl-pkgs/deb/$(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) $(grep VERSION_CODENAME /etc/os-release | cut -d= -f2) main" \
-              > /etc/apt/sources.list.d/ai5a-asl.list
-
-            apt-get update
-            apt-get install -y asl-asterisk
