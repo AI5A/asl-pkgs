@@ -11,30 +11,38 @@ jobs:
     timeout-minutes: 15
     strategy:
       fail-fast: false
+      matrix:
+        include:
+          - codename: bullseye
+            arch: armhf
+            sleep: 0
+          - codename: buster
+            arch: armhf
+            sleep: 20
     steps:
       - uses: actions/checkout@v2
 
-      - name: Grab asl-dahdi artifacts (armhf)
+      - name: Grab asl-dahdi-${{ matrix.codename }} artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: build.yml
           workflow_conclusion: success
           branch: fixes
-          name: asl-dahdi
+          name: asl-dahdi-${{ matrix.codename }}
           repo: AI5A/asl-dahdi
-          path: dahdi-bullseye-armhf
+          path: dahdi
 
-      - name: Grab asl-dahdi artifacts (armhf)
+      - name: Grab asterisk-${{ matrix.codename }} artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: asl-build.yml
           workflow_conclusion: success
           branch: fixes
-          name: allstarlink
+          name: allstarlink-${{ matrix.codename }}
           repo: AI5A/asl
-          path: asl-bullseye-armhf
+          path: asl
 
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v5
@@ -48,18 +56,14 @@ jobs:
           sudo apt-get install -y gcc dpkg-dev gpg
           mkdir -p asl-pkgs/deb/pool/main
           pushd asl-pkgs/deb
-          for release in bullseye; do
-            for arch in armhf; do
-              mv ../../dahdi-$release-$arch/* ../../asl-$release-$arch/* pool/main/
-              mkdir -p dists/$release/main/binary-$arch
-              dpkg-scanpackages --arch $arch pool/ > dists/$release/main/binary-$arch/Packages
-              cat dists/$release/main/binary-$arch/Packages | gzip -9 > dists/$release/main/binary-$arch/Packages.gz
-            done
-            pushd dists/$release
-            bash $repo/generate-release.sh $release > Release
-            gpg --armour --sign --detach-sign -o Release.gpg Release
+            mv ../../dahdi/* ../../asl/* pool/main/
+            mkdir -p dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}
+            dpkg-scanpackages --arch ${{ matrix.arch }} pool/ > dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}/Packages
+            cat dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}/Packages | gzip -9 > dists/${{ matrix.codename }}/main/binary-${{ matrix.arch }}/Packages.gz
+            pushd dists/${{ matrix.codename }}
+              bash $repo/generate-release.sh ${{ matrix.codename }} > Release
+              gpg --armour --sign --detach-sign -o Release.gpg Release
             popd
-          done
           popd
 
       - name: Generate html indexes
@@ -69,6 +73,10 @@ jobs:
           cat files-list.txt
           cat files-list.txt | python3 gen-indexes.py .
           tree .
+
+      - name: Wait some time so that we don't clash with other matrix runs
+        run: |
+          sleep ${{ matrix.sleep }}
 
       - name: "Deploy it 🚀"
         uses: JamesIves/github-pages-deploy-action@v4
