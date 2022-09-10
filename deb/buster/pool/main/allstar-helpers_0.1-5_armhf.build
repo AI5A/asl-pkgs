@@ -1,0 +1,131 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package allstar-helpers
+dpkg-buildpackage: info: source version 0.1-5
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Rob Vella <me@robvella.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture armhf
+ debian/rules clean
+dh clean  
+   dh_auto_clean
+   dh_clean
+dh_installcron -i
+ debian/rules build
+dh build  
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+	make -j2 "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/asl/allstar'
+install -m 755 post_install/asl-menu /usr/sbin/
+install -m 755 post_install/astdb.php /usr/sbin/
+install -m 755 post_install/astdn.sh /usr/sbin/
+install -m 755 post_install/astres.sh /usr/sbin/
+install -m 755 post_install/astup.sh /usr/sbin/
+install -m 755 post_install/clear-log /usr/sbin/
+install -m 755 post_install/first-time /usr/sbin/
+install -m 755 post_install/flush-log /usr/sbin/
+install -m 755 post_install/net-setup /usr/sbin/
+install -m 755 post_install/node-setup /usr/sbin/
+install -m 755 post_install/restore-node /usr/sbin/
+install -m 755 post_install/save-node /usr/sbin/
+install -m 755 post_install/setclock /usr/sbin/
+install -m 755 post_install/set-host /usr/sbin/
+install -m 755 post_install/termsize.py /usr/sbin/
+install -m 755 post_install/wifi-setup /usr/sbin/
+install -m 755 post_install/write-node-callsigns /usr/sbin/
+install -d /usr/bin/backup-server
+install -m 755 backup-server/* /usr/bin/backup-server/
+make[1]: Leaving directory '/asl/allstar'
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+dh_installcron -i
+ debian/rules binary
+dh binary  
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   dh_auto_install
+	make -j2 install DESTDIR=/asl/allstar/debian/allstar-helpers AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/asl/allstar'
+install -m 755 post_install/asl-menu /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/astdb.php /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/astdn.sh /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/astres.sh /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/astup.sh /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/clear-log /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/first-time /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/flush-log /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/net-setup /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/node-setup /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/restore-node /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/save-node /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/setclock /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/set-host /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/termsize.py /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/wifi-setup /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -m 755 post_install/write-node-callsigns /asl/allstar/debian/allstar-helpers/usr/sbin/
+install -d /asl/allstar/debian/allstar-helpers/usr/bin/backup-server
+install -m 755 backup-server/* /asl/allstar/debian/allstar-helpers/usr/bin/backup-server/
+make[1]: Leaving directory '/asl/allstar'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installcron
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'allstar-helpers' in '../allstar-helpers_0.1-5_all.deb'.
+dh_installcron -i
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../allstar-helpers_0.1-5_armhf.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian allstar-helpers_0.1-5_armhf.changes ...
+warning: the authors of lintian do not recommend running it with root privileges!
+W: allstar-helpers: copyright-without-copyright-notice
+E: allstar-helpers: subdir-in-usr-bin usr/bin/backup-server/
+E: allstar-helpers: missing-depends-on-sensible-utils usr/sbin/asl-menu
+W: allstar-helpers: script-with-language-extension usr/sbin/astdb.php
+W: allstar-helpers: script-with-language-extension usr/sbin/astdn.sh
+W: allstar-helpers: script-with-language-extension usr/sbin/astres.sh
+W: allstar-helpers: script-with-language-extension usr/sbin/astup.sh
+W: allstar-helpers: script-with-language-extension usr/sbin/termsize.py
+W: allstar-helpers: binary-without-manpage usr/sbin/asl-menu
+W: allstar-helpers: binary-without-manpage usr/sbin/astdb.php
+W: allstar-helpers: binary-without-manpage usr/sbin/astdn.sh
+W: allstar-helpers: binary-without-manpage usr/sbin/astres.sh
+W: allstar-helpers: binary-without-manpage usr/sbin/astup.sh
+W: allstar-helpers: binary-without-manpage usr/sbin/clear-log
+W: allstar-helpers: binary-without-manpage usr/sbin/first-time
+W: allstar-helpers: binary-without-manpage usr/sbin/flush-log
+W: allstar-helpers: binary-without-manpage usr/sbin/net-setup
+W: allstar-helpers: binary-without-manpage usr/sbin/node-setup
+W: allstar-helpers: binary-without-manpage usr/sbin/restore-node
+W: allstar-helpers: binary-without-manpage usr/sbin/save-node
+W: allstar-helpers: binary-without-manpage usr/sbin/set-host
+W: allstar-helpers: binary-without-manpage usr/sbin/setclock
+W: allstar-helpers: binary-without-manpage usr/sbin/termsize.py
+W: allstar-helpers: binary-without-manpage usr/sbin/wifi-setup
+W: allstar-helpers: binary-without-manpage usr/sbin/write-node-callsigns
+E: allstar-helpers: php-script-but-no-php-cli-dep usr/sbin/astdb.php #!/usr/bin/php
+E: allstar-helpers: python-script-but-no-python-dep usr/sbin/termsize.py #!python
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/allmon.css
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/index.html
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/upload.php
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/allstarLogo.png
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/download.php
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/favicon.ico
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/down.php
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/router.php
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/allowedHosts.ini
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/up.html
+Finished running lintian.

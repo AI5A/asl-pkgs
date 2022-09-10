@@ -1,0 +1,989 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package asl-dahdi-tools
+dpkg-buildpackage: info: source version 1:3.0.0.1.3
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Rick Elrod <me@ai5a.net>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture armhf
+ debian/rules clean
+dh clean --with autoreconf
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/asl-dahdi/tools'
+/usr/bin/make clean
+make[2]: Entering directory '/asl-dahdi/tools'
+Making clean in xpp
+make[3]: Entering directory '/asl-dahdi/tools/xpp'
+Making clean in perl_modules
+make[4]: Entering directory '/asl-dahdi/tools/xpp/perl_modules'
+rm -rf .libs _libs
+rm -f *.lo
+make[4]: Leaving directory '/asl-dahdi/tools/xpp/perl_modules'
+Making clean in oct612x
+make[4]: Entering directory '/asl-dahdi/tools/xpp/oct612x'
+rm -rf .libs _libs
+rm -rf apilib/bt/.libs apilib/bt/_libs
+rm -rf apilib/largmath/.libs apilib/largmath/_libs
+rm -rf apilib/llman/.libs apilib/llman/_libs
+rm -rf octdeviceapi/oct6100api/oct6100_api/.libs octdeviceapi/oct6100api/oct6100_api/_libs
+test -z "liboctasic.la" || rm -f liboctasic.la
+rm -f ./so_locations
+rm -f *.o
+rm -f apilib/bt/*.o
+rm -f apilib/bt/*.lo
+rm -f apilib/largmath/*.o
+rm -f apilib/largmath/*.lo
+rm -f apilib/llman/*.o
+rm -f apilib/llman/*.lo
+rm -f octdeviceapi/oct6100api/oct6100_api/*.o
+rm -f octdeviceapi/oct6100api/oct6100_api/*.lo
+rm -f *.lo
+make[4]: Leaving directory '/asl-dahdi/tools/xpp/oct612x'
+Making clean in xtalk
+make[4]: Entering directory '/asl-dahdi/tools/xpp/xtalk'
+rm -rf .libs _libs
+test -z "libxtalk.la" || rm -f libxtalk.la
+rm -f ./so_locations
+ rm -f xlist_test xusb_test xusb_test_bypath xtalk_test xtalk_raw_test xtalk_send
+rm -f *.o
+rm -f *.lo
+make[4]: Leaving directory '/asl-dahdi/tools/xpp/xtalk'
+make[4]: Entering directory '/asl-dahdi/tools/xpp'
+ rm -f test_parse
+test -z "dahdi_registration.check xpp_sync.check lsdahdi.check xpp_blink.check dahdi_genconf.check dahdi_hardware.check twinstar.check dahdi_registration.8 xpp_sync.8 lsdahdi.8 xpp_blink.8 dahdi_genconf.8 dahdi_hardware.8 twinstar.8" || rm -f dahdi_registration.check xpp_sync.check lsdahdi.check xpp_blink.check dahdi_genconf.check dahdi_hardware.check twinstar.check dahdi_registration.8 xpp_sync.8 lsdahdi.8 xpp_blink.8 dahdi_genconf.8 dahdi_hardware.8 twinstar.8
+rm -rf .libs _libs
+test -z "libastribank.la libecholoader.la libhexfile.la" || rm -f libastribank.la libecholoader.la libhexfile.la
+rm -f ./so_locations
+ rm -f astribank_tool astribank_hexload astribank_allow astribank_is_starting
+rm -f *.o
+rm -f *.lo
+make[4]: Leaving directory '/asl-dahdi/tools/xpp'
+make[3]: Leaving directory '/asl-dahdi/tools/xpp'
+Making clean in doc
+make[3]: Entering directory '/asl-dahdi/tools/doc'
+rm -rf .libs _libs
+rm -f *.lo
+make[3]: Leaving directory '/asl-dahdi/tools/doc'
+Making clean in hotplug
+make[3]: Entering directory '/asl-dahdi/tools/hotplug'
+rm -rf .libs _libs
+rm -f *.lo
+make[3]: Leaving directory '/asl-dahdi/tools/hotplug'
+make[3]: Entering directory '/asl-dahdi/tools'
+test -z "libtonezone.la" || rm -f libtonezone.la
+rm -f ./so_locations
+rm -rf .libs _libs
+/usr/bin/make -f ./Makefile.legacy top_srcdir=. srcdir=. clean
+make[4]: Entering directory '/asl-dahdi/tools'
+rm -f *.o tzdriver
+rm -f core
+rm -rf doc/dahdi_tool.8.html doc/fxotune.8.html doc/dahdi_span_types.8.html doc/dahdi_scan.8.html doc/dahdi_monitor.8.html doc/dahdi_span_assignments.8.html doc/dahdi_test.8.html doc/dahdi_diag.8.html doc/pattest.8.html doc/dahdi_maint.8.html doc/dahdi_cfg.8.html doc/patgen.8.html doc/dahdi_waitfor_span_assignments.8.html doc/fxstest.8.html xpp/astribank_allow.8.html xpp/astribank_is_starting.8.html xpp/astribank_tool.8.html xpp/astribank_hexload.8.html README.html README.Astribank.html *.asciidoc tonezones.txt
+make[4]: Leaving directory '/asl-dahdi/tools'
+ rm -f dahdi_speed fxstest patgen pattest patlooptest dahdi_diag timertest hdlcstress hdlctest hdlcgen hdlcverify
+ rm -f dahdi_test dahdi_maint dahdi_monitor dahdi_cfg dahdi_scan fxotune sethdlc dahdi_tool
+rm -f *.o
+rm -f *.lo
+make[3]: Leaving directory '/asl-dahdi/tools'
+make[2]: Leaving directory '/asl-dahdi/tools'
+make[1]: Leaving directory '/asl-dahdi/tools'
+   debian/rules override_dh_autoreconf_clean
+make[1]: Entering directory '/asl-dahdi/tools'
+dh_autoreconf_clean
+if [ -f "debian/savedfiles.cpio" ]; then \
+  cpio -idu < debian/savedfiles.cpio && \
+  rm -f debian/savedfiles.cpio; \
+fi
+make[1]: Leaving directory '/asl-dahdi/tools'
+   debian/rules override_dh_clean
+make[1]: Entering directory '/asl-dahdi/tools'
+dh_clean -X autom4te.cache
+make[1]: Leaving directory '/asl-dahdi/tools'
+ debian/rules build
+dh build --with autoreconf
+   dh_update_autotools_config
+   debian/rules override_dh_autoreconf
+make[1]: Entering directory '/asl-dahdi/tools'
+if [ ! -f "debian/savedfiles.cpio" -a -f Makefile.in ]; then \
+  cpio -o < debian/savedfiles.lst > debian/savedfiles.cpio; \
+fi
+8308 blocks
+dh_autoreconf
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'auxdir'.
+libtoolize: copying file 'auxdir/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+configure.ac:69: installing 'auxdir/compile'
+configure.ac:15: installing 'auxdir/missing'
+Makefile.am: installing 'auxdir/depcomp'
+make[1]: Leaving directory '/asl-dahdi/tools'
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/asl-dahdi/tools'
+dh_auto_configure
+	./configure --build=arm-linux-gnueabihf --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-option-checking --disable-silent-rules --libdir=\${prefix}/lib/arm-linux-gnueabihf --libexecdir=\${prefix}/lib/arm-linux-gnueabihf --disable-maintainer-mode --disable-dependency-tracking
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... none
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for ld... ld
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... none
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) none
+checking how to run the C preprocessor... gcc -E
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for gawk... (cached) mawk
+checking build system type... arm-unknown-linux-gnueabihf
+checking host system type... arm-unknown-linux-gnueabihf
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... ld
+checking if the linker (ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 1572864
+checking how to convert arm-unknown-linux-gnueabihf file names to arm-unknown-linux-gnueabihf format... func_convert_file_noop
+checking how to convert arm-unknown-linux-gnueabihf file names to toolchain format... func_convert_file_noop
+checking for ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... ld
+checking if the linker (ld) is GNU ld... yes
+checking whether the g++ linker (ld) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (ld) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for GNU make... make
+/usr/bin/sed: can't read conftest.c: No such file or directory
+checking for grep... (cached) /usr/bin/grep
+checking for sh... /bin/bash
+checking for ln... /usr/bin/ln
+checking for wget... /usr/bin/wget
+checking for perl... /usr/bin/perl
+checking for perl libdir... + test '' = set
++ test /usr = NONE -o /usr = /usr
+++ /usr/bin/perl -V:vendorlib
++ eval 'vendorlib='\''/usr/share/perl5'\'';'
+++ vendorlib=/usr/share/perl5
++ perllibdir=/usr/share/perl5
++ set +x
+/usr/share/perl5
+checking for -Wdeclaration-after-statement support... yes
+checking sys/soundcard.h usability... yes
+checking sys/soundcard.h presence... yes
+checking for sys/soundcard.h... yes
+checking linux/soundcard.h usability... yes
+checking linux/soundcard.h presence... yes
+checking for linux/soundcard.h... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking for unistd.h... (cached) yes
+checking for inline... inline
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint8_t... yes
+checking for cos in -lm... yes
+checking for pthread_create in -lpthread... yes
+checking for DAHDI_CODE in dahdi/user.h... yes
+checking for DAHDI_CONFIG_NTTE in dahdi/user.h... yes
+checking for newtBell in -lnewt... yes
+checking newt.h usability... yes
+checking newt.h presence... yes
+checking for newt.h... yes
+checking for usb_init in -lusb... no
+checking for pcap_compile in -lpcap... no
+checking whether DAHDI_TXMIRROR is declared... no
+checking for semtimedop... yes
+checking for alarm... yes
+checking for bzero... yes
+checking for gettimeofday... yes
+checking for memset... yes
+checking for pow... yes
+checking for regcomp... yes
+checking for select... yes
+checking for socket... yes
+checking for strcasecmp... yes
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for strtoul... yes
+checking for error_at_line... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for LIBUSBX... yes
+checking for libusb_error_name in -lusb-1.0... yes
+configure: Skipping LIBUSB tests (have good LIBUSBX)
+checking for GENERIC_HDLC_VERSION version 4 in linux/hdlc.h... no
+checking for GENERIC_HDLC_VERSION version 4 in linux/hdlc/ioctl.h... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating makeopts
+config.status: creating version.c
+config.status: creating Makefile
+config.status: creating doc/Makefile
+config.status: creating hotplug/Makefile
+config.status: creating ppp/Makefile
+config.status: creating xpp/Makefile
+config.status: creating xpp/xtalk/Makefile
+config.status: creating xpp/oct612x/Makefile
+config.status: creating xpp/perl_modules/Makefile
+config.status: creating autoconfig.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+configure: *** dahdi-tools build successfully configured ***
+make[1]: Leaving directory '/asl-dahdi/tools'
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/asl-dahdi/tools'
+/usr/bin/make all docs
+make[2]: Entering directory '/asl-dahdi/tools'
+/usr/bin/make  all-recursive
+make[3]: Entering directory '/asl-dahdi/tools'
+Making all in xpp
+make[4]: Entering directory '/asl-dahdi/tools/xpp'
+Making all in perl_modules
+make[5]: Entering directory '/asl-dahdi/tools/xpp/perl_modules'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/asl-dahdi/tools/xpp/perl_modules'
+Making all in oct612x
+make[5]: Entering directory '/asl-dahdi/tools/xpp/oct612x'
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_adpcm_chan.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_adpcm_chan.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_adpcm_chan.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_adpcm_chan.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_adpcm_chan.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_adpcm_chan.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_adpcm_chan.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_channel.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_channel.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_channel.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_channel.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_channel.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_channel.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_channel.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_chip_open.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_chip_open.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_chip_open.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_chip_open.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_chip_open.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_chip_open.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_chip_open.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_chip_stats.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_chip_stats.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_chip_stats.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_chip_stats.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_chip_stats.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_chip_stats.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_chip_stats.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_conf_bridge.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_conf_bridge.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_conf_bridge.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_conf_bridge.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_conf_bridge.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_conf_bridge.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_conf_bridge.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_debug.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_debug.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_debug.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_debug.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_debug.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_debug.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_debug.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_events.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_events.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_events.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_events.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_events.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_events.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_events.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_interrupts.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_interrupts.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_interrupts.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_interrupts.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_interrupts.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_interrupts.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_interrupts.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_memory.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_memory.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_memory.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_memory.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_memory.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_memory.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_memory.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_miscellaneous.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_miscellaneous.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_miscellaneous.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_miscellaneous.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_miscellaneous.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_miscellaneous.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_miscellaneous.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_mixer.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_mixer.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_mixer.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_mixer.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_mixer.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_mixer.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_mixer.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_phasing_tsst.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_phasing_tsst.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_phasing_tsst.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_phasing_tsst.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_phasing_tsst.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_phasing_tsst.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_phasing_tsst.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_playout_buf.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_playout_buf.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_playout_buf.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_playout_buf.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_playout_buf.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_playout_buf.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_playout_buf.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_remote_debug.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_remote_debug.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_remote_debug.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_remote_debug.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_remote_debug.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_remote_debug.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_remote_debug.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tlv.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_tlv.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_tlv.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tlv.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tlv.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tlv.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tlv.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tone_detection.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_tone_detection.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_tone_detection.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tone_detection.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tone_detection.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tone_detection.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tone_detection.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tsi_cnct.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_tsi_cnct.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_tsi_cnct.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tsi_cnct.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tsi_cnct.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tsi_cnct.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tsi_cnct.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tsst.lo `test -f 'octdeviceapi/oct6100api/oct6100_api/oct6100_tsst.c' || echo './'`octdeviceapi/oct6100api/oct6100_api/oct6100_tsst.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tsst.c  -fPIC -DPIC -o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tsst.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c octdeviceapi/oct6100api/oct6100_api/oct6100_tsst.c -o octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tsst.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o apilib/bt/liboctasic_la-octapi_bt0.lo `test -f 'apilib/bt/octapi_bt0.c' || echo './'`apilib/bt/octapi_bt0.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c apilib/bt/octapi_bt0.c  -fPIC -DPIC -o apilib/bt/.libs/liboctasic_la-octapi_bt0.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c apilib/bt/octapi_bt0.c -o apilib/bt/liboctasic_la-octapi_bt0.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o apilib/largmath/liboctasic_la-octapi_largmath.lo `test -f 'apilib/largmath/octapi_largmath.c' || echo './'`apilib/largmath/octapi_largmath.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c apilib/largmath/octapi_largmath.c  -fPIC -DPIC -o apilib/largmath/.libs/liboctasic_la-octapi_largmath.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c apilib/largmath/octapi_largmath.c -o apilib/largmath/liboctasic_la-octapi_largmath.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o apilib/llman/liboctasic_la-octapi_llman.lo `test -f 'apilib/llman/octapi_llman.c' || echo './'`apilib/llman/octapi_llman.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c apilib/llman/octapi_llman.c  -fPIC -DPIC -o apilib/llman/.libs/liboctasic_la-octapi_llman.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c apilib/llman/octapi_llman.c -o apilib/llman/liboctasic_la-octapi_llman.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Werror -DPTR_TYPE=uint32_t -DcOCT6100_INTERNAL_SUPER_ARRAY_SIZE=1024 -DcOCT6100_MAX_ECHO_CHANNELS=672 -DcOCT6100_MAX_MIXER_EVENTS=1344 -I../../xpp/oct612x/include -I../../xpp/oct612x/octdeviceapi -I../../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o liboctasic.la  octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_adpcm_chan.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_channel.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_chip_open.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_chip_stats.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_conf_bridge.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_debug.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_events.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_interrupts.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_memory.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_miscellaneous.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_mixer.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_phasing_tsst.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_playout_buf.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_remote_debug.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tlv.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tone_detection.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tsi_cnct.lo octdeviceapi/oct6100api/oct6100_api/liboctasic_la-oct6100_tsst.lo apilib/bt/liboctasic_la-octapi_bt0.lo apilib/largmath/liboctasic_la-octapi_largmath.lo apilib/llman/liboctasic_la-octapi_llman.lo  -lpthread -lm 
+libtool: link: ar cru .libs/liboctasic.a octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_adpcm_chan.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_channel.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_chip_open.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_chip_stats.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_conf_bridge.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_debug.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_events.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_interrupts.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_memory.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_miscellaneous.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_mixer.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_phasing_tsst.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_playout_buf.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_remote_debug.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tlv.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tone_detection.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tsi_cnct.o octdeviceapi/oct6100api/oct6100_api/.libs/liboctasic_la-oct6100_tsst.o apilib/bt/.libs/liboctasic_la-octapi_bt0.o apilib/largmath/.libs/liboctasic_la-octapi_largmath.o apilib/llman/.libs/liboctasic_la-octapi_llman.o 
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/liboctasic.a
+libtool: link: ( cd ".libs" && rm -f "liboctasic.la" && ln -s "../liboctasic.la" "liboctasic.la" )
+make[5]: Leaving directory '/asl-dahdi/tools/xpp/oct612x'
+Making all in xtalk
+make[5]: Entering directory '/asl-dahdi/tools/xpp/xtalk'
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o xlist_test-xlist_test.o `test -f 'xlist_test.c' || echo './'`xlist_test.c
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-xtalk_sync.lo `test -f 'xtalk_sync.c' || echo './'`xtalk_sync.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk_sync.c  -fPIC -DPIC -o .libs/libxtalk_la-xtalk_sync.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk_sync.c -o libxtalk_la-xtalk_sync.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-xtalk_raw.lo `test -f 'xtalk_raw.c' || echo './'`xtalk_raw.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk_raw.c  -fPIC -DPIC -o .libs/libxtalk_la-xtalk_raw.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk_raw.c -o libxtalk_la-xtalk_raw.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-xtalk_base.lo `test -f 'xtalk_base.c' || echo './'`xtalk_base.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk_base.c  -fPIC -DPIC -o .libs/libxtalk_la-xtalk_base.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk_base.c -o libxtalk_la-xtalk_base.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-xlist.lo `test -f 'xlist.c' || echo './'`xlist.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xlist.c  -fPIC -DPIC -o .libs/libxtalk_la-xlist.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xlist.c -o libxtalk_la-xlist.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-debug.lo `test -f 'debug.c' || echo './'`debug.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c debug.c  -fPIC -DPIC -o .libs/libxtalk_la-debug.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c debug.c -o libxtalk_la-debug.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-xtalk-xusb.lo `test -f 'xtalk-xusb.c' || echo './'`xtalk-xusb.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk-xusb.c  -fPIC -DPIC -o .libs/libxtalk_la-xtalk-xusb.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xtalk-xusb.c -o libxtalk_la-xtalk-xusb.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-xusb_common.lo `test -f 'xusb_common.c' || echo './'`xusb_common.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xusb_common.c  -fPIC -DPIC -o .libs/libxtalk_la-xusb_common.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xusb_common.c -o libxtalk_la-xusb_common.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libxtalk_la-xusb_libusbx.lo `test -f 'xusb_libusbx.c' || echo './'`xusb_libusbx.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xusb_libusbx.c  -fPIC -DPIC -o .libs/libxtalk_la-xusb_libusbx.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I../.. -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c xusb_libusbx.c -o libxtalk_la-xusb_libusbx.o >/dev/null 2>&1
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -I/usr/include/libusb-1.0 -DXTALK_OPTIONS_FILE=\"/etc/dahdi/xpp.conf\" -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o libxtalk.la   libxtalk_la-xtalk_sync.lo libxtalk_la-xtalk_raw.lo libxtalk_la-xtalk_base.lo libxtalk_la-xlist.lo libxtalk_la-debug.lo libxtalk_la-xtalk-xusb.lo libxtalk_la-xusb_common.lo libxtalk_la-xusb_libusbx.lo  -lusb-1.0 -lpthread -lm 
+libtool: link: ar cru .libs/libxtalk.a .libs/libxtalk_la-xtalk_sync.o .libs/libxtalk_la-xtalk_raw.o .libs/libxtalk_la-xtalk_base.o .libs/libxtalk_la-xlist.o .libs/libxtalk_la-debug.o .libs/libxtalk_la-xtalk-xusb.o .libs/libxtalk_la-xusb_common.o .libs/libxtalk_la-xusb_libusbx.o 
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libxtalk.a
+libtool: link: ( cd ".libs" && rm -f "libxtalk.la" && ln -s "../libxtalk.la" "libxtalk.la" )
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o xlist_test xlist_test-xlist_test.o libxtalk.la -lusb-1.0 -lpthread -lm 
+libtool: link: gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o xlist_test xlist_test-xlist_test.o  ./.libs/libxtalk.a -lusb-1.0 -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o xusb_test-xusb_test.o `test -f 'xusb_test.c' || echo './'`xusb_test.c
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o xusb_test xusb_test-xusb_test.o libxtalk.la -lusb-1.0 -lpthread -lm 
+libtool: link: gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o xusb_test xusb_test-xusb_test.o  ./.libs/libxtalk.a -lusb-1.0 -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o xusb_test_bypath-xusb_test_bypath.o `test -f 'xusb_test_bypath.c' || echo './'`xusb_test_bypath.c
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o xusb_test_bypath xusb_test_bypath-xusb_test_bypath.o libxtalk.la -lusb-1.0 -lpthread -lm 
+libtool: link: gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o xusb_test_bypath xusb_test_bypath-xusb_test_bypath.o  ./.libs/libxtalk.a -lusb-1.0 -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o xtalk_test-xtalk_test.o `test -f 'xtalk_test.c' || echo './'`xtalk_test.c
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o xtalk_test xtalk_test-xtalk_test.o libxtalk.la -lusb-1.0 -lpthread -lm 
+libtool: link: gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o xtalk_test xtalk_test-xtalk_test.o  ./.libs/libxtalk.a -lusb-1.0 -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o xtalk_raw_test-xtalk_raw_test.o `test -f 'xtalk_raw_test.c' || echo './'`xtalk_raw_test.c
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o xtalk_raw_test xtalk_raw_test-xtalk_raw_test.o libxtalk.la -lusb-1.0 -lpthread -lm 
+libtool: link: gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o xtalk_raw_test xtalk_raw_test-xtalk_raw_test.o  ./.libs/libxtalk.a -lusb-1.0 -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I../..   -Wdate-time -D_FORTIFY_SOURCE=2 -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o xtalk_send-xtalk_send.o `test -f 'xtalk_send.c' || echo './'`xtalk_send.c
+/bin/bash ../../libtool  --tag=CC   --mode=link gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS  -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o xtalk_send xtalk_send-xtalk_send.o libxtalk.la -lusb-1.0 -lpthread -lm 
+libtool: link: gcc -Wall -Wno-unknown-pragmas -Werror -DXTALK_DLL -DXTALK_DLL_EXPORTS -I./include -I. -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o xtalk_send xtalk_send-xtalk_send.o  ./.libs/libxtalk.a -lusb-1.0 -lpthread -lm
+make[5]: Leaving directory '/asl-dahdi/tools/xpp/xtalk'
+make[5]: Entering directory '/asl-dahdi/tools/xpp'
+gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o astribank_tool-astribank_tool.o `test -f 'astribank_tool.c' || echo './'`astribank_tool.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libastribank_la-astribank.lo `test -f 'astribank.c' || echo './'`astribank.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c astribank.c  -fPIC -DPIC -o .libs/libastribank_la-astribank.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c astribank.c -o libastribank_la-astribank.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libastribank_la-mpptalk.lo `test -f 'mpptalk.c' || echo './'`mpptalk.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c mpptalk.c  -fPIC -DPIC -o .libs/libastribank_la-mpptalk.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c mpptalk.c -o libastribank_la-mpptalk.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libastribank_la-astribank_license.lo `test -f 'astribank_license.c' || echo './'`astribank_license.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c astribank_license.c  -fPIC -DPIC -o .libs/libastribank_la-astribank_license.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c astribank_license.c -o libastribank_la-astribank_license.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o libastribank.la  libastribank_la-astribank.lo libastribank_la-mpptalk.lo libastribank_la-astribank_license.lo xtalk/libxtalk.la -lpthread -lm 
+libtool: link: (cd .libs/libastribank.lax/libxtalk.a && ar x "/asl-dahdi/tools/xpp/xtalk/.libs/libxtalk.a")
+libtool: link: ar cru .libs/libastribank.a .libs/libastribank_la-astribank.o .libs/libastribank_la-mpptalk.o .libs/libastribank_la-astribank_license.o   .libs/libastribank.lax/libxtalk.a/libxtalk_la-debug.o .libs/libastribank.lax/libxtalk.a/libxtalk_la-xlist.o .libs/libastribank.lax/libxtalk.a/libxtalk_la-xtalk-xusb.o .libs/libastribank.lax/libxtalk.a/libxtalk_la-xtalk_base.o .libs/libastribank.lax/libxtalk.a/libxtalk_la-xtalk_raw.o .libs/libastribank.lax/libxtalk.a/libxtalk_la-xtalk_sync.o .libs/libastribank.lax/libxtalk.a/libxtalk_la-xusb_common.o .libs/libastribank.lax/libxtalk.a/libxtalk_la-xusb_libusbx.o 
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libastribank.a
+libtool: link: rm -fr .libs/libastribank.lax
+libtool: link: ( cd ".libs" && rm -f "libastribank.la" && ln -s "../libastribank.la" "libastribank.la" )
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -lusb-1.0 -Wl,-z,relro -o astribank_tool astribank_tool-astribank_tool.o libastribank.la -lpthread -lm 
+libtool: link: gcc -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o astribank_tool astribank_tool-astribank_tool.o  ./.libs/libastribank.a -lusb-1.0 -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o astribank_hexload-astribank_hexload.o `test -f 'astribank_hexload.c' || echo './'`astribank_hexload.c
+gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o astribank_hexload-pic_loader.o `test -f 'pic_loader.c' || echo './'`pic_loader.c
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o hexfile.lo hexfile.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c hexfile.c  -fPIC -DPIC -o .libs/hexfile.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c hexfile.c -o hexfile.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o libhexfile.la  hexfile.lo  -lpthread -lm 
+libtool: link: ar cru .libs/libhexfile.a .libs/hexfile.o 
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libhexfile.a
+libtool: link: ( cd ".libs" && rm -f "libhexfile.la" && ln -s "../libhexfile.la" "libhexfile.la" )
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libecholoader_la-parse_span_specs.lo `test -f 'parse_span_specs.c' || echo './'`parse_span_specs.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c parse_span_specs.c  -fPIC -DPIC -o .libs/libecholoader_la-parse_span_specs.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c parse_span_specs.c -o libecholoader_la-parse_span_specs.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o libecholoader_la-echo_loader.lo `test -f 'echo_loader.c' || echo './'`echo_loader.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c echo_loader.c  -fPIC -DPIC -o .libs/libecholoader_la-echo_loader.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I.. -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include -Wall -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c echo_loader.c -o libecholoader_la-echo_loader.o >/dev/null 2>&1
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I. -I./xtalk/include  -Wall  -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o libecholoader.la  libecholoader_la-parse_span_specs.lo libecholoader_la-echo_loader.lo  -lpthread -lm 
+libtool: link: ar cru .libs/libecholoader.a .libs/libecholoader_la-parse_span_specs.o .libs/libecholoader_la-echo_loader.o 
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libecholoader.a
+libtool: link: ( cd ".libs" && rm -f "libecholoader.la" && ln -s "../libecholoader.la" "libecholoader.la" )
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I. -I./xtalk/include  -Wall  -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -lusb-1.0 -Wl,-z,relro -o astribank_hexload astribank_hexload-astribank_hexload.o astribank_hexload-pic_loader.o libhexfile.la libastribank.la libecholoader.la oct612x/liboctasic.la  -lpthread -lm 
+libtool: link: gcc -I. -I./xtalk/include -Wall -I../xpp/oct612x/include -I../xpp/oct612x/octdeviceapi -I../xpp/oct612x/octdeviceapi/oct6100api -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o astribank_hexload astribank_hexload-astribank_hexload.o astribank_hexload-pic_loader.o  ./.libs/libhexfile.a ./.libs/libastribank.a -lusb-1.0 ./.libs/libecholoader.a oct612x/.libs/liboctasic.a -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2 -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o astribank_allow-astribank_allow.o `test -f 'astribank_allow.c' || echo './'`astribank_allow.c
+/bin/bash ../libtool  --tag=CC   --mode=link gcc -I. -I./xtalk/include  -Wall  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -lusb-1.0 -Wl,-z,relro -o astribank_allow astribank_allow-astribank_allow.o libastribank.la -lpthread -lm 
+libtool: link: gcc -I. -I./xtalk/include -Wall -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o astribank_allow astribank_allow-astribank_allow.o  ./.libs/libastribank.a -lusb-1.0 -lpthread -lm
+gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o astribank_is_starting.o astribank_is_starting.c
+/bin/bash ../libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o astribank_is_starting astribank_is_starting.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o astribank_is_starting astribank_is_starting.o  -lpthread -lm
+  GEN      dahdi_registration.8
+  GEN      xpp_sync.8
+  GEN      lsdahdi.8
+  GEN      xpp_blink.8
+  GEN      dahdi_genconf.8
+  GEN      dahdi_hardware.8
+  GEN      twinstar.8
+  CHECK    dahdi_registration
+  CHECK    xpp_sync
+  CHECK    lsdahdi
+  CHECK    xpp_blink
+  CHECK    dahdi_genconf
+  CHECK    dahdi_hardware
+  CHECK    twinstar
+make[5]: Leaving directory '/asl-dahdi/tools/xpp'
+make[4]: Leaving directory '/asl-dahdi/tools/xpp'
+Making all in doc
+make[4]: Entering directory '/asl-dahdi/tools/doc'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/asl-dahdi/tools/doc'
+Making all in hotplug
+make[4]: Entering directory '/asl-dahdi/tools/hotplug'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/asl-dahdi/tools/hotplug'
+make[4]: Entering directory '/asl-dahdi/tools'
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2 -O2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_speed-dahdi_speed.o `test -f 'dahdi_speed.c' || echo './'`dahdi_speed.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -O2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o dahdi_speed dahdi_speed-dahdi_speed.o  -lpthread -lm 
+libtool: link: gcc -O2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o dahdi_speed dahdi_speed-dahdi_speed.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o fxstest.o fxstest.c
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o libtonezone_la-zonedata.lo `test -f 'zonedata.c' || echo './'`zonedata.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -c zonedata.c  -fPIC -DPIC -o .libs/libtonezone_la-zonedata.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -c zonedata.c -o libtonezone_la-zonedata.o >/dev/null 2>&1
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o libtonezone_la-tonezone.lo `test -f 'tonezone.c' || echo './'`tonezone.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -c tonezone.c  -fPIC -DPIC -o .libs/libtonezone_la-tonezone.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -c tonezone.c -o libtonezone_la-tonezone.o >/dev/null 2>&1
+/bin/bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o libtonezone_la-version.lo `test -f 'version.c' || echo './'`version.c
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -c version.c  -fPIC -DPIC -o .libs/libtonezone_la-version.o
+libtool: compile:  gcc -DHAVE_CONFIG_H -I. -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -c version.c -o libtonezone_la-version.o >/dev/null 2>&1
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -I. -DBUILDING_TONEZONE -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -version-info "2:0:0" -Wl,-z,relro -o libtonezone.la -rpath /usr/lib/arm-linux-gnueabihf libtonezone_la-zonedata.lo libtonezone_la-tonezone.lo libtonezone_la-version.lo -lm -lpthread -lm 
+libtool: link: gcc -shared  -fPIC -DPIC  .libs/libtonezone_la-zonedata.o .libs/libtonezone_la-tonezone.o .libs/libtonezone_la-version.o   -lpthread -lm  -g -O2 -fstack-protector-strong -g -O2 -g -O2 -fstack-protector-strong -g -O2 -Wl,-z -Wl,relro   -Wl,-soname -Wl,libtonezone.so.2.0 -o .libs/libtonezone.so.2.0.0
+libtool: link: (cd ".libs" && rm -f "libtonezone.so.2" && ln -s "libtonezone.so.2.0.0" "libtonezone.so.2")
+libtool: link: (cd ".libs" && rm -f "libtonezone.so" && ln -s "libtonezone.so.2.0.0" "libtonezone.so")
+libtool: link: ar cru .libs/libtonezone.a  libtonezone_la-zonedata.o libtonezone_la-tonezone.o libtonezone_la-version.o
+/usr/bin/ar: `u' modifier ignored since `D' is the default (see `U')
+libtool: link: ranlib .libs/libtonezone.a
+libtool: link: ( cd ".libs" && rm -f "libtonezone.la" && ln -s "../libtonezone.la" "libtonezone.la" )
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o fxstest fxstest.o libtonezone.la -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o .libs/fxstest fxstest.o  ./.libs/libtonezone.so -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o patgen.o patgen.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o patgen patgen.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o patgen patgen.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o pattest.o pattest.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o pattest pattest.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o pattest pattest.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o patlooptest.o patlooptest.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o patlooptest patlooptest.o libtonezone.la -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o .libs/patlooptest patlooptest.o  ./.libs/libtonezone.so -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_diag.o dahdi_diag.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o dahdi_diag dahdi_diag.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o dahdi_diag dahdi_diag.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o timertest.o timertest.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o timertest timertest.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o timertest timertest.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o hdlcstress.o hdlcstress.c
+hdlcstress.c: In function ‘send_packet’:
+hdlcstress.c:115:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+   write(fd, buf, len + 2);
+   ^~~~~~~~~~~~~~~~~~~~~~~
+hdlcstress.c:142:3: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+   write(fd, outbuf, pos);
+   ^~~~~~~~~~~~~~~~~~~~~~
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o hdlcstress hdlcstress.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o hdlcstress hdlcstress.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o hdlctest.o hdlctest.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o hdlctest hdlctest.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o hdlctest hdlctest.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o hdlcgen.o hdlcgen.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o hdlcgen hdlcgen.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o hdlcgen hdlcgen.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o hdlcverify.o hdlcverify.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o hdlcverify hdlcverify.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o hdlcverify hdlcverify.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_test.o dahdi_test.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o dahdi_test dahdi_test.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o dahdi_test dahdi_test.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_maint.o dahdi_maint.c
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o version.o version.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o dahdi_maint dahdi_maint.o version.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o dahdi_maint dahdi_maint.o version.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_monitor.o dahdi_monitor.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o dahdi_monitor dahdi_monitor.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o dahdi_monitor dahdi_monitor.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_cfg.o dahdi_cfg.c
+dahdi_cfg.c: In function ‘are_all_spans_assigned’:
+dahdi_cfg.c:164:7: warning: ‘/span_count’ directive output may be truncated writing 11 bytes into a region of size between 0 and 1023 [-Wformat-truncation=]
+    "%s/span_count", device_path);
+       ^~~~~~~~~~~
+In file included from /usr/include/stdio.h:873,
+                 from dahdi_cfg.c:30:
+/usr/include/arm-linux-gnueabihf/bits/stdio2.h:67:10: note: ‘__builtin___snprintf_chk’ output between 12 and 1035 bytes into a destination of size 1023
+   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        __bos (__s), __fmt, __va_arg_pack ());
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -lpthread -Wl,-z,relro -o dahdi_cfg dahdi_cfg.o libtonezone.la -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o .libs/dahdi_cfg dahdi_cfg.o  ./.libs/libtonezone.so -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_scan.o dahdi_scan.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o dahdi_scan dahdi_scan.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o dahdi_scan dahdi_scan.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o fxotune.o fxotune.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o fxotune fxotune.o -lm -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o fxotune fxotune.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o sethdlc.o sethdlc.c
+/bin/bash ./libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o sethdlc sethdlc.o  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o sethdlc sethdlc.o  -lpthread -lm
+gcc -DHAVE_CONFIG_H -I.   -Wdate-time -D_FORTIFY_SOURCE=2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2   -c -o dahdi_tool-dahdi_tool.o `test -f 'dahdi_tool.c' || echo './'`dahdi_tool.c
+dahdi_tool.c: In function ‘sel_callback’:
+dahdi_tool.c:167:40: warning: ‘            F10=Quit’ directive output may be truncated writing 20 bytes into a region of size between 1 and 197 [-Wformat-truncation=]
+   snprintf(info2, sizeof(info2), "%-59s            F10=Quit", info);
+                                        ^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/stdio.h:873,
+                 from dahdi_tool.c:32:
+/usr/include/arm-linux-gnueabihf/bits/stdio2.h:67:10: note: ‘__builtin___snprintf_chk’ output between 80 and 276 bytes into a destination of size 256
+   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        __bos (__s), __fmt, __va_arg_pack ());
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+dahdi_tool.c:163:40: warning: ‘ F1=Details F10=Quit’ directive output may be truncated writing 20 bytes into a region of size between 1 and 197 [-Wformat-truncation=]
+   snprintf(info2, sizeof(info2), "%-59s F1=Details F10=Quit", info);
+                                        ^~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/stdio.h:873,
+                 from dahdi_tool.c:32:
+/usr/include/arm-linux-gnueabihf/bits/stdio2.h:67:10: note: ‘__builtin___snprintf_chk’ output between 80 and 276 bytes into a destination of size 256
+   return __builtin___snprintf_chk (__s, __n, __USE_FORTIFY_LEVEL - 1,
+          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        __bos (__s), __fmt, __va_arg_pack ());
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/bin/bash ./libtool  --tag=CC   --mode=link gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2    -Wl,-z,relro -o dahdi_tool dahdi_tool-dahdi_tool.o -lnewt  -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -g -Wall -O2 -Wl,-z -Wl,relro -o dahdi_tool dahdi_tool-dahdi_tool.o  -lnewt -lpthread -lm
+/usr/bin/make -f ./Makefile.legacy top_srcdir=. srcdir=.  all
+make[5]: Entering directory '/asl-dahdi/tools'
+make[5]: Nothing to be done for 'all'.
+make[5]: Leaving directory '/asl-dahdi/tools'
+make[4]: Leaving directory '/asl-dahdi/tools'
+make[3]: Leaving directory '/asl-dahdi/tools'
+/usr/bin/make -f ./Makefile.legacy top_srcdir=. srcdir=.  docs
+make[3]: Entering directory '/asl-dahdi/tools'
+man -Thtml doc/dahdi_tool.8 >doc/dahdi_tool.8.html
+man -Thtml doc/fxotune.8 >doc/fxotune.8.html
+man -Thtml doc/dahdi_span_types.8 >doc/dahdi_span_types.8.html
+man -Thtml doc/dahdi_scan.8 >doc/dahdi_scan.8.html
+man -Thtml doc/dahdi_monitor.8 >doc/dahdi_monitor.8.html
+man -Thtml doc/dahdi_span_assignments.8 >doc/dahdi_span_assignments.8.html
+man -Thtml doc/dahdi_test.8 >doc/dahdi_test.8.html
+man -Thtml doc/dahdi_diag.8 >doc/dahdi_diag.8.html
+man -Thtml doc/pattest.8 >doc/pattest.8.html
+man -Thtml doc/dahdi_maint.8 >doc/dahdi_maint.8.html
+man -Thtml doc/dahdi_cfg.8 >doc/dahdi_cfg.8.html
+man -Thtml doc/patgen.8 >doc/patgen.8.html
+man -Thtml doc/dahdi_waitfor_span_assignments.8 >doc/dahdi_waitfor_span_assignments.8.html
+man -Thtml doc/fxstest.8 >doc/fxstest.8.html
+man -Thtml xpp/xpp_sync.8 >xpp/xpp_sync.8.html
+man -Thtml xpp/dahdi_registration.8 >xpp/dahdi_registration.8.html
+man -Thtml xpp/dahdi_genconf.8 >xpp/dahdi_genconf.8.html
+man -Thtml xpp/astribank_allow.8 >xpp/astribank_allow.8.html
+man -Thtml xpp/twinstar.8 >xpp/twinstar.8.html
+man -Thtml xpp/astribank_hexload.8 >xpp/astribank_hexload.8.html
+man -Thtml xpp/dahdi_hardware.8 >xpp/dahdi_hardware.8.html
+man -Thtml xpp/astribank_is_starting.8 >xpp/astribank_is_starting.8.html
+man -Thtml xpp/xpp_blink.8 >xpp/xpp_blink.8.html
+man -Thtml xpp/astribank_tool.8 >xpp/astribank_tool.8.html
+man -Thtml xpp/lsdahdi.8 >xpp/lsdahdi.8.html
+perl -n -e \
+	'if (/^#($|\s)(.*)/){ if (!$in_doc){print "\n"}; $in_doc=1; print "$2\n" } else { if ($in_doc){print "\n"}; $in_doc=0; print "  $_" }' \
+	system.conf.sample \
+| perl -p -e 'if (/^  #?(\w+)=/ && ! exists $cfgs{$1}){my $cfg = $1; $cfgs{$cfg} = 1; s/^/\n[[cfg_$cfg]]\n/}'  >system.conf.asciidoc
+perl -n -e \
+	'if (/^#($|\s)(.*)/){ if (!$in_doc){print "\n"}; $in_doc=1; print "$2\n" } else { if ($in_doc){print "\n"}; $in_doc=0; print "  $_" }' \
+	init.conf.sample \
+| perl -p -e 'if (/^  #?(\w+)=/ && ! exists $cfgs{$1}){my $cfg = $1; $cfgs{$cfg} = 1; s/^/\n[[cfg_$cfg]]\n/}'  >init.conf.asciidoc
+perl -ne 'next unless (/\.(country|description) = *"([^"]*)/); \
+	print (($1 eq "country")? "* $2\t":"$2\n");' zonedata.c  \
+>tonezones.txt
+cp xpp/genconf_parameters genconf_parameters.sample
+perl -n -e \
+	'if (/^#($|\s)(.*)/){ if (!$in_doc){print "\n"}; $in_doc=1; print "$2\n" } else { if ($in_doc){print "\n"}; $in_doc=0; print "  $_" }' \
+	genconf_parameters.sample \
+| perl -p -e 'if (/^  #?(\w+)=/ && ! exists $cfgs{$1}){my $cfg = $1; $cfgs{$cfg} = 1; s/^/\n[[cfg_$cfg]]\n/}'  >genconf_parameters.asciidoc
+perl -n -e \
+	'if (/^#($|\s)(.*)/){ if (!$in_doc){print "\n"}; $in_doc=1; print "$2\n" } else { if ($in_doc){print "\n"}; $in_doc=0; print "  $_" }' \
+	assigned-spans.conf.sample \
+| perl -p -e 'if (/^  #?(\w+)=/ && ! exists $cfgs{$1}){my $cfg = $1; $cfgs{$cfg} = 1; s/^/\n[[cfg_$cfg]]\n/}'  >assigned-spans.conf.asciidoc
+perl -n -e \
+	'if (/^#($|\s)(.*)/){ if (!$in_doc){print "\n"}; $in_doc=1; print "$2\n" } else { if ($in_doc){print "\n"}; $in_doc=0; print "  $_" }' \
+	span-types.conf.sample \
+| perl -p -e 'if (/^  #?(\w+)=/ && ! exists $cfgs{$1}){my $cfg = $1; $cfgs{$cfg} = 1; s/^/\n[[cfg_$cfg]]\n/}'  >span-types.conf.asciidoc
+TZ=UTC asciidoc -n -a toc -a toclevels=4 README
+TZ=UTC asciidoc -o README.Astribank.html -n -a toc -a toclevels=4 xpp/README.Astribank
+make[3]: Leaving directory '/asl-dahdi/tools'
+make[2]: Leaving directory '/asl-dahdi/tools'
+cat dahdi.rules xpp/xpp.rules >debian/dahdi.udev
+make[1]: Leaving directory '/asl-dahdi/tools'
+   dh_auto_test
+	make -j2 check VERBOSE=1
+make[1]: Entering directory '/asl-dahdi/tools'
+Making check in xpp
+make[2]: Entering directory '/asl-dahdi/tools/xpp'
+Making check in perl_modules
+make[3]: Entering directory '/asl-dahdi/tools/xpp/perl_modules'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/asl-dahdi/tools/xpp/perl_modules'
+Making check in oct612x
+make[3]: Entering directory '/asl-dahdi/tools/xpp/oct612x'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/asl-dahdi/tools/xpp/oct612x'
+Making check in xtalk
+make[3]: Entering directory '/asl-dahdi/tools/xpp/xtalk'
+make[3]: Nothing to be done for 'check'.
+make[3]: Leaving directory '/asl-dahdi/tools/xpp/xtalk'
+make[3]: Entering directory '/asl-dahdi/tools/xpp'
+/usr/bin/make  test_parse
+make[4]: Entering directory '/asl-dahdi/tools/xpp'
+gcc -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -c -o test_parse.o test_parse.c
+/bin/bash ../libtool  --tag=CC   --mode=link gcc  -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security  -Wl,-z,relro -o test_parse test_parse.o libhexfile.la -lpthread -lm 
+libtool: link: gcc -g -O2 -fdebug-prefix-map=/asl-dahdi/tools=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z -Wl,relro -o test_parse test_parse.o  ./.libs/libhexfile.a -lpthread -lm
+make[4]: Leaving directory '/asl-dahdi/tools/xpp'
+make[3]: Leaving directory '/asl-dahdi/tools/xpp'
+make[2]: Leaving directory '/asl-dahdi/tools/xpp'
+Making check in doc
+make[2]: Entering directory '/asl-dahdi/tools/doc'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/asl-dahdi/tools/doc'
+Making check in hotplug
+make[2]: Entering directory '/asl-dahdi/tools/hotplug'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/asl-dahdi/tools/hotplug'
+make[2]: Entering directory '/asl-dahdi/tools'
+/usr/bin/make -f ./Makefile.legacy top_srcdir=. srcdir=.  all
+make[3]: Entering directory '/asl-dahdi/tools'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/asl-dahdi/tools'
+make[2]: Leaving directory '/asl-dahdi/tools'
+make[1]: Leaving directory '/asl-dahdi/tools'
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary --with autoreconf
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/asl-dahdi/tools'
+# also run the 'config' target, in addition to the 'install' target:
+dh_auto_install -- config
+	make -j1 install DESTDIR=/asl-dahdi/tools/debian/tmp AM_UPDATE_INFO_DIR=no config
+make[2]: Entering directory '/asl-dahdi/tools'
+Making install in xpp
+make[3]: Entering directory '/asl-dahdi/tools/xpp'
+Making install in perl_modules
+make[4]: Entering directory '/asl-dahdi/tools/xpp/perl_modules'
+make[5]: Entering directory '/asl-dahdi/tools/xpp/perl_modules'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/perl5'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Hardware'
+ /usr/bin/install -c -m 644  Dahdi/Hardware/USB.pm Dahdi/Hardware/PCI.pm '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Hardware'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi'
+ /usr/bin/install -c -m 644  Dahdi/Hardware.pm Dahdi/Span.pm Dahdi/Utils.pm Dahdi/Chans.pm Dahdi/Xpp.pm '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Xpp'
+ /usr/bin/install -c -m 644  Dahdi/Xpp/Line.pm Dahdi/Xpp/Xbus.pm Dahdi/Xpp/Xpd.pm Dahdi/Xpp/Mpp.pm '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Xpp'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Config/Gen'
+ /usr/bin/install -c -m 644  Dahdi/Config/Gen/Xpporder.pm Dahdi/Config/Gen/Spantypes.pm Dahdi/Config/Gen/Modules.pm Dahdi/Config/Gen/Users.pm Dahdi/Config/Gen/Freepbxdb.pm Dahdi/Config/Gen/Unicall.pm Dahdi/Config/Gen/Chandahdi.pm Dahdi/Config/Gen/Assignedspans.pm Dahdi/Config/Gen/System.pm '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Config/Gen'
+ /usr/bin/install -c -m 644  Dahdi.pm '/asl-dahdi/tools/debian/tmp/usr/share/perl5/.'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Config'
+ /usr/bin/install -c -m 644  Dahdi/Config/Params.pm Dahdi/Config/Gen.pm '/asl-dahdi/tools/debian/tmp/usr/share/perl5/Dahdi/Config'
+make[5]: Leaving directory '/asl-dahdi/tools/xpp/perl_modules'
+make[4]: Leaving directory '/asl-dahdi/tools/xpp/perl_modules'
+Making install in oct612x
+make[4]: Entering directory '/asl-dahdi/tools/xpp/oct612x'
+make[5]: Entering directory '/asl-dahdi/tools/xpp/oct612x'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/asl-dahdi/tools/xpp/oct612x'
+make[4]: Leaving directory '/asl-dahdi/tools/xpp/oct612x'
+Making install in xtalk
+make[4]: Entering directory '/asl-dahdi/tools/xpp/xtalk'
+make[5]: Entering directory '/asl-dahdi/tools/xpp/xtalk'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/asl-dahdi/tools/xpp/xtalk'
+make[4]: Leaving directory '/asl-dahdi/tools/xpp/xtalk'
+make[4]: Entering directory '/asl-dahdi/tools/xpp'
+make[5]: Entering directory '/asl-dahdi/tools/xpp'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/sbin'
+ /usr/bin/install -c dahdi_registration xpp_sync lsdahdi xpp_blink dahdi_genconf dahdi_hardware twinstar '/asl-dahdi/tools/debian/tmp/usr/sbin'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/sbin'
+  /bin/bash ../libtool   --mode=install /usr/bin/install -c astribank_tool astribank_hexload astribank_allow astribank_is_starting '/asl-dahdi/tools/debian/tmp/usr/sbin'
+libtool: install: /usr/bin/install -c astribank_tool /asl-dahdi/tools/debian/tmp/usr/sbin/astribank_tool
+libtool: install: /usr/bin/install -c astribank_hexload /asl-dahdi/tools/debian/tmp/usr/sbin/astribank_hexload
+libtool: install: /usr/bin/install -c astribank_allow /asl-dahdi/tools/debian/tmp/usr/sbin/astribank_allow
+libtool: install: /usr/bin/install -c astribank_is_starting /asl-dahdi/tools/debian/tmp/usr/sbin/astribank_is_starting
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/dahdi'
+ /usr/bin/install -c xpp_fxloader astribank_hook waitfor_xpds '/asl-dahdi/tools/debian/tmp/usr/share/dahdi'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/lib/dracut/dracut.conf.d'
+ /usr/bin/install -c -m 644 50-dahdi.conf '/asl-dahdi/tools/debian/tmp/usr/lib/dracut/dracut.conf.d'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/man/man8'
+ /usr/bin/install -c -m 644 dahdi_registration.8 xpp_sync.8 lsdahdi.8 xpp_blink.8 dahdi_genconf.8 dahdi_hardware.8 twinstar.8 astribank_tool.8 astribank_hexload.8 astribank_allow.8 astribank_is_starting.8 '/asl-dahdi/tools/debian/tmp/usr/share/man/man8'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/etc/udev/rules.d'
+ /usr/bin/install -c -m 644 xpp.rules '/asl-dahdi/tools/debian/tmp/etc/udev/rules.d'
+make[5]: Leaving directory '/asl-dahdi/tools/xpp'
+make[4]: Leaving directory '/asl-dahdi/tools/xpp'
+make[3]: Leaving directory '/asl-dahdi/tools/xpp'
+Making install in doc
+make[3]: Entering directory '/asl-dahdi/tools/doc'
+make[4]: Entering directory '/asl-dahdi/tools/doc'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/man/man8'
+ /usr/bin/install -c -m 644 dahdi_cfg.8 dahdi_maint.8 dahdi_monitor.8 dahdi_scan.8 dahdi_span_assignments.8 dahdi_span_types.8 dahdi_test.8 dahdi_tool.8 dahdi_waitfor_span_assignments.8 fxotune.8 '/asl-dahdi/tools/debian/tmp/usr/share/man/man8'
+make[4]: Leaving directory '/asl-dahdi/tools/doc'
+make[3]: Leaving directory '/asl-dahdi/tools/doc'
+Making install in hotplug
+make[3]: Entering directory '/asl-dahdi/tools/hotplug'
+make[4]: Entering directory '/asl-dahdi/tools/hotplug'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/dahdi'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/dahdi/span_config.d/'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/share/dahdi/handle_device.d/'
+ /usr/bin/install -c dahdi_handle_device dahdi_span_config dahdi_auto_assign_compat '/asl-dahdi/tools/debian/tmp/usr/share/dahdi'
+ /usr/bin/install -c span_config.d/10-dahdi-cfg span_config.d/20-fxotune span_config.d/50-asterisk '/asl-dahdi/tools/debian/tmp/usr/share/dahdi/span_config.d/'
+ /usr/bin/install -c handle_device.d/10-span-types handle_device.d/20-span-assignments '/asl-dahdi/tools/debian/tmp/usr/share/dahdi/handle_device.d/'
+make[4]: Leaving directory '/asl-dahdi/tools/hotplug'
+make[3]: Leaving directory '/asl-dahdi/tools/hotplug'
+make[3]: Entering directory '/asl-dahdi/tools'
+/usr/bin/make -f ./Makefile.legacy top_srcdir=. srcdir=.  all
+make[4]: Entering directory '/asl-dahdi/tools'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/asl-dahdi/tools'
+make[4]: Entering directory '/asl-dahdi/tools'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/sbin'
+ /usr/bin/install -c dahdi_span_assignments dahdi_waitfor_span_assignments dahdi_span_types '/asl-dahdi/tools/debian/tmp/usr/sbin'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf'
+ /bin/bash ./libtool   --mode=install /usr/bin/install -c   libtonezone.la '/asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf'
+libtool: install: /usr/bin/install -c .libs/libtonezone.so.2.0.0 /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf/libtonezone.so.2.0.0
+libtool: install: (cd /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf && { ln -s -f libtonezone.so.2.0.0 libtonezone.so.2 || { rm -f libtonezone.so.2 && ln -s libtonezone.so.2.0.0 libtonezone.so.2; }; })
+libtool: install: (cd /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf && { ln -s -f libtonezone.so.2.0.0 libtonezone.so || { rm -f libtonezone.so && ln -s libtonezone.so.2.0.0 libtonezone.so; }; })
+libtool: install: /usr/bin/install -c .libs/libtonezone.lai /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf/libtonezone.la
+libtool: install: /usr/bin/install -c .libs/libtonezone.a /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf/libtonezone.a
+libtool: install: chmod 644 /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf/libtonezone.a
+libtool: install: ranlib /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf/libtonezone.a
+libtool: warning: remember to run 'libtool --finish /usr/lib/arm-linux-gnueabihf'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/sbin'
+  /bin/bash ./libtool   --mode=install /usr/bin/install -c dahdi_test dahdi_maint dahdi_monitor dahdi_cfg dahdi_scan fxotune sethdlc dahdi_tool '/asl-dahdi/tools/debian/tmp/usr/sbin'
+libtool: install: /usr/bin/install -c dahdi_test /asl-dahdi/tools/debian/tmp/usr/sbin/dahdi_test
+libtool: install: /usr/bin/install -c dahdi_maint /asl-dahdi/tools/debian/tmp/usr/sbin/dahdi_maint
+libtool: install: /usr/bin/install -c dahdi_monitor /asl-dahdi/tools/debian/tmp/usr/sbin/dahdi_monitor
+libtool: warning: 'libtonezone.la' has not been installed in '/usr/lib/arm-linux-gnueabihf'
+libtool: install: /usr/bin/install -c .libs/dahdi_cfg /asl-dahdi/tools/debian/tmp/usr/sbin/dahdi_cfg
+libtool: install: /usr/bin/install -c dahdi_scan /asl-dahdi/tools/debian/tmp/usr/sbin/dahdi_scan
+libtool: install: /usr/bin/install -c fxotune /asl-dahdi/tools/debian/tmp/usr/sbin/fxotune
+libtool: install: /usr/bin/install -c sethdlc /asl-dahdi/tools/debian/tmp/usr/sbin/sethdlc
+libtool: install: /usr/bin/install -c dahdi_tool /asl-dahdi/tools/debian/tmp/usr/sbin/dahdi_tool
+/usr/bin/make  install-exec-hook
+make[5]: Entering directory '/asl-dahdi/tools'
+/usr/bin/make -f ./Makefile.legacy top_srcdir=. srcdir=. install
+make[6]: Entering directory '/asl-dahdi/tools'
+###################################################
+###
+### DAHDI tools installed successfully.
+### If you have not done so before, install init scripts with:
+###
+###   make install-config
+###
+###################################################
+make[6]: Leaving directory '/asl-dahdi/tools'
+Compatibility symlinks (should be removed in the future)
+ln -sf libtonezone.so.2.0.0 /asl-dahdi/tools/debian/tmp/usr/lib/arm-linux-gnueabihf/libtonezone.so.2.0
+make[5]: Leaving directory '/asl-dahdi/tools'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/etc/dahdi'
+ /usr/bin/install -c -m 644 system.conf.sample assigned-spans.conf.sample span-types.conf.sample modules.sample '/asl-dahdi/tools/debian/tmp/etc/dahdi'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/usr/include/dahdi'
+ /usr/bin/install -c -m 644 tonezone.h '/asl-dahdi/tools/debian/tmp/usr/include/dahdi'
+ /usr/bin/mkdir -p '/asl-dahdi/tools/debian/tmp/etc/udev/rules.d'
+ /usr/bin/install -c -m 644 dahdi.rules '/asl-dahdi/tools/debian/tmp/etc/udev/rules.d'
+/usr/bin/make  install-data-hook
+make[5]: Entering directory '/asl-dahdi/tools'
+mkdir -p /asl-dahdi/tools/debian/tmp/etc/bash_completion.d
+install -m 644 ./dahdi-bash-completion /asl-dahdi/tools/debian/tmp/etc/bash_completion.d/dahdi
+make[5]: Leaving directory '/asl-dahdi/tools'
+make[4]: Leaving directory '/asl-dahdi/tools'
+make[3]: Leaving directory '/asl-dahdi/tools'
+make[2]: Nothing to be done for 'config'.
+make[2]: Leaving directory '/asl-dahdi/tools'
+rm /asl-dahdi/tools/debian/tmp/usr/share/dahdi/span_config.d/50-asterisk
+make[1]: Leaving directory '/asl-dahdi/tools'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installexamples
+dh_installexamples: warning: Cannot find (any matches for) "*.conf" (tried in .)
+
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/asl-dahdi/usr/sbin/fxotune debian/asl-dahdi/usr/sbin/astribank_hexload debian/asl-dahdi/usr/sbin/dahdi_scan debian/asl-dahdi/usr/sbin/dahdi_cfg debian/asl-dahdi/usr/sbin/astribank_is_starting debian/asl-dahdi/usr/sbin/sethdlc debian/asl-dahdi/usr/sbin/dahdi_tool debian/asl-dahdi/usr/sbin/dahdi_maint debian/asl-dahdi/usr/sbin/astribank_tool debian/asl-dahdi/usr/sbin/astribank_allow debian/asl-dahdi/usr/sbin/dahdi_test debian/asl-dahdi/usr/sbin/dahdi_monitor were not linked against ld-linux-armhf.so.3 (they use none of the library's symbols)
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'libtonezone2.0-dbgsym' in '../libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb'.
+dpkg-deb: building package 'asl-dahdi' in '../asl-dahdi_3.0.0.1.3_armhf.deb'.
+dpkg-deb: building package 'libtonezone-dev' in '../libtonezone-dev_3.0.0.1.3_armhf.deb'.
+dpkg-deb: building package 'asl-dahdi-dbgsym' in '../asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb'.
+dpkg-deb: building package 'libtonezone2.0' in '../libtonezone2.0_3.0.0.1.3_armhf.deb'.
+ dpkg-genbuildinfo --build=binary
+dpkg-genbuildinfo: warning:     debian/changelog(l11): badly formatted trailer line
+LINE:  -- Adam Paul <adamjpaul@gmail.com> Mon, 03, Aug 2020 12:19:38 -0400
+dpkg-genbuildinfo: warning:     debian/changelog(l13): found start of entry where expected more change data or trailer
+LINE: asl-dahdi-tools (1:3.0.0-1.1) unstable; urgency=medium
+dpkg-genbuildinfo: warning:     debian/changelog(l13): found end of file where expected more change data or trailer
+ dpkg-genchanges --build=binary >../asl-dahdi-tools_3.0.0.1.3_armhf.changes
+dpkg-genchanges: warning:     debian/changelog(l11): badly formatted trailer line
+LINE:  -- Adam Paul <adamjpaul@gmail.com> Mon, 03, Aug 2020 12:19:38 -0400
+dpkg-genchanges: warning:     debian/changelog(l13): found start of entry where expected more change data or trailer
+LINE: asl-dahdi-tools (1:3.0.0-1.1) unstable; urgency=medium
+dpkg-genchanges: warning:     debian/changelog(l13): found end of file where expected more change data or trailer
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian asl-dahdi-tools_3.0.0.1.3_armhf.changes ...
+warning: the authors of lintian do not recommend running it with root privileges!
+W: asl-dahdi: hardening-no-pie usr/sbin/astribank_allow
+W: asl-dahdi: hardening-no-pie usr/sbin/astribank_hexload
+W: asl-dahdi: hardening-no-pie usr/sbin/astribank_is_starting
+W: asl-dahdi: hardening-no-pie usr/sbin/astribank_tool
+W: asl-dahdi: hardening-no-pie usr/sbin/dahdi_cfg
+W: asl-dahdi: hardening-no-pie usr/sbin/dahdi_maint
+W: asl-dahdi: hardening-no-pie usr/sbin/dahdi_monitor
+W: asl-dahdi: hardening-no-pie usr/sbin/dahdi_scan
+W: asl-dahdi: hardening-no-pie usr/sbin/dahdi_test
+W: asl-dahdi: hardening-no-pie usr/sbin/dahdi_tool
+W: asl-dahdi: hardening-no-pie usr/sbin/fxotune
+W: asl-dahdi: hardening-no-pie usr/sbin/sethdlc
+W: asl-dahdi: syntax-error-in-debian-changelog line 11 "badly formatted trailer line"
+W: asl-dahdi: syntax-error-in-debian-changelog line 13 "found start of entry where expected more change data or trailer"
+W: asl-dahdi: binary-without-manpage usr/sbin/sethdlc
+E: asl-dahdi: doc-base-file-references-missing-file dahdi:8 /usr/share/doc/dahdi/README.html
+E: asl-dahdi: doc-base-file-references-missing-file dahdi:9 /usr/share/doc/dahdi/README.html
+E: asl-dahdi: doc-base-file-references-missing-file dahdi:12 /usr/share/doc/dahdi/README.gz
+E: asl-dahdi: doc-base-file-references-missing-file dahdi.astribank:8 /usr/share/doc/dahdi/README.Astribank.html
+E: asl-dahdi: doc-base-file-references-missing-file dahdi.astribank:9 /usr/share/doc/dahdi/README.Astribank.html
+E: asl-dahdi: doc-base-file-references-missing-file dahdi.astribank:12 /usr/share/doc/dahdi/README.Astribank.gz
+W: libtonezone2.0: syntax-error-in-debian-changelog line 11 "badly formatted trailer line"
+W: libtonezone2.0: syntax-error-in-debian-changelog line 13 "found start of entry where expected more change data or trailer"
+W: libtonezone-dev: syntax-error-in-debian-changelog line 11 "badly formatted trailer line"
+W: libtonezone-dev: syntax-error-in-debian-changelog line 13 "found start of entry where expected more change data or trailer"
+Finished running lintian.

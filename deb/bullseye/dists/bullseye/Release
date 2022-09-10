@@ -1,0 +1,16 @@
+Suite: stable
+Codename: bullseye
+Version: 1.0
+Architectures: amd64 armhf
+Components: main
+Description: AI5A AllStarLink Debian Repository
+Date: Sat, 10 Sep 2022 08:31:50 +0000
+MD5Sum:
+ 6f38a341902b618ba91ed769e2213d2b 9181 main/binary-armhf/Packages.gz
+ 21ba5a1d2bf6c64c069ee430954e3ab4 21569 main/binary-armhf/Packages
+SHA1:
+ e2de177fc328d0df37152eb00abee7ae826b4538 9181 main/binary-armhf/Packages.gz
+ f30b54b4d27ddfa76182c4c805aa63f82d79a1a4 21569 main/binary-armhf/Packages
+SHA256:
+ 6ba4d2682994523e1b2adfc056be2a67c45724e12c16cc8f5c53c6c7898527ba 9181 main/binary-armhf/Packages.gz
+ bae5f50f8defb91423c57a4e229f7ff25df374796d364f5f4a8c9beab18fced3 21569 main/binary-armhf/Packages

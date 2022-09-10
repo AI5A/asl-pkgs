@@ -1,0 +1,39 @@
+Format: 1.8
+Date: Tue, 06 Sep 2022 23:51:33 -0500
+Source: asl-dahdi-tools
+Binary: asl-dahdi asl-dahdi-dbgsym libtonezone-dev libtonezone2.0 libtonezone2.0-dbgsym
+Architecture: armhf
+Version: 1:3.0.0.1.3
+Distribution: unstable
+Urgency: medium
+Maintainer: Adam Paul <adamjpaul@gmail.com>
+Changed-By: Rick Elrod <me@ai5a.net>
+Description:
+ asl-dahdi  - utilities for using the DAHDI kernel modules
+ libtonezone-dev - tonezone library (development)
+ libtonezone2.0 - tonezone library (runtime)
+Changes:
+ asl-dahdi-tools (1:3.0.0.1.3) unstable; urgency=medium
+ .
+   * build for bullseye
+Checksums-Sha1:
+ 21aedafe32a50a21463aa03f8a1a523cf06c3cd3 571232 asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
+ 62d208edda47acb67502a13d839b1589c9a39f15 7063 asl-dahdi-tools_3.0.0.1.3_armhf.buildinfo
+ 2a76e65826e35a81d803f02583945b26bd0091e6 317532 asl-dahdi_3.0.0.1.3_armhf.deb
+ daf55c0f6f08ad08b1e510a93f533f0995fc995d 26144 libtonezone-dev_3.0.0.1.3_armhf.deb
+ 10cc1cb7ec6095fa426cf626baf327f778ab8977 12732 libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb
+ dcb48fda61e4c4dc766306776b2f4babc0220233 26172 libtonezone2.0_3.0.0.1.3_armhf.deb
+Checksums-Sha256:
+ 722a47e205f902d73e5475b7ad423c34b8d8d414186aa0c4ee5e5b696272953c 571232 asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
+ bf5801ffb373503fcafd7f79652df940039451bed9d778611830397116f1a41b 7063 asl-dahdi-tools_3.0.0.1.3_armhf.buildinfo
+ d9f09fb8b7b275a923087656ca22caf681c91862a5476c2fda606f04bb38da22 317532 asl-dahdi_3.0.0.1.3_armhf.deb
+ f504c6a6251adaf05d26de850822a3ab4a6522c88269262adc1dda806036bce7 26144 libtonezone-dev_3.0.0.1.3_armhf.deb
+ b52c737759abb8933afc64ce6f9775d6f8c8a49ef78f354c673d34d7c63b40fc 12732 libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb
+ cfd55c00f755c2b63ae4612123b410ecb32cebd922fe2e8af7f70863c7218d90 26172 libtonezone2.0_3.0.0.1.3_armhf.deb
+Files:
+ 1184e47ae13ebcf13d9a9e011a669a37 571232 debug optional asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
+ 4c47d736dac30feb3b8ef177d9e12ae9 7063 comm optional asl-dahdi-tools_3.0.0.1.3_armhf.buildinfo
+ 9290e725a251dda487026bfb2069dc02 317532 comm optional asl-dahdi_3.0.0.1.3_armhf.deb
+ 302f47619535016f68b5efdcd2618437 26144 libdevel optional libtonezone-dev_3.0.0.1.3_armhf.deb
+ 8ce5c17deb1ec74923ff6a9fb7b706d6 12732 debug optional libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb
+ fea5576119ed285f1cfcdd2b039bfd5c 26172 libs optional libtonezone2.0_3.0.0.1.3_armhf.deb

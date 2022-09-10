@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Wed, 07 Sep 2022 00:26:34 -0500
+Source: asl-dahdi-linux
+Binary: asl-dahdi-dkms asl-dahdi-linux asl-dahdi-source
+Architecture: all
+Version: 1:3.0.1.20200801-0.2
+Distribution: unstable
+Urgency: medium
+Maintainer: Adam Paul <adamjpaul@gmail.com>
+Changed-By: Rick Elrod <me@ai5a.net>
+Description:
+ asl-dahdi-dkms - ASL-DAHDI telephony interface (dkms kernel driver)
+ asl-dahdi-linux - ASL-DAHDI telephony interface - Linux userspace parts
+ asl-dahdi-source - ASL-DAHDI telephony interface - source code for kernel driver
+Changes:
+ asl-dahdi-linux (1:3.0.1.20200801-0.2) unstable; urgency=medium
+ .
+   * Build for bullseye
+Checksums-Sha1:
+ 9926b57acfb85264b4d9c80f3c4099580ada083d 6132392 asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
+ fe1cfc5154b3179b99ca307bd1dc0edab22f9a17 43088 asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
+ 97d0c1e9b4379b841714381680281e695e34bf8c 5824 asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
+ c0b84b806f11d85d65403fc27be1d67ef9b94ea3 6588080 asl-dahdi-source_3.0.1.20200801-0.2_all.deb
+Checksums-Sha256:
+ db02cf5a861b6460a02fd12d9007ebe9a517a1edcf7db4bf56c99a7695a2a817 6132392 asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
+ d83d16f79b0b6bba635ac3facf48890c4bcd33523be58d4e810c758b6135c114 43088 asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
+ cb15bd13e2e5f2007c623f96058f6ef095845f929c8d5c6215b8b22cd418799e 5824 asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
+ 259c0e4bdbd515391303af62c2790a2a689103752ba5a0e44de4efa489b67758 6588080 asl-dahdi-source_3.0.1.20200801-0.2_all.deb
+Files:
+ 0bcce569761d225d15e8ffbd3a333057 6132392 kernel optional asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
+ 0f3510584a4aa4857f1386942c812a14 43088 comm optional asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
+ 03f289a4d1cfbe87772efa2de1046b3e 5824 comm optional asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
+ cf88565bc7d1060a549ffde0cd86b78f 6588080 kernel optional asl-dahdi-source_3.0.1.20200801-0.2_all.deb

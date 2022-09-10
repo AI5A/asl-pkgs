@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Wed, 03 Mar 2021 17:50:36 -0800
+Source: allstar-helpers
+Binary: allstar-helpers
+Architecture: all
+Version: 0.1-5
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Adam Paul <adamjpaul@gmail.com>
+Changed-By: Rob Vella <me@robvella.com>
+Description:
+ allstar-helpers - auto-generated package by debmake
+Changes:
+ allstar-helpers (0.1-5) UNRELEASED; urgency=low
+ .
+   * Remove rc.updatenodelist
+   * Add cron scripts for astdb.php
+Checksums-Sha1:
+ 4312c47e97b8c6b73e63ff69dfcaf433f80e4b52 45204 allstar-helpers_0.1-5_all.deb
+ 5cbace9bcf9975859c1850e176bfd828b9dccae3 4521 allstar-helpers_0.1-5_armhf.buildinfo
+Checksums-Sha256:
+ 54da43bf39e506b47e6ace3756a238a358923a2fdaa1cdec2de7194f36ac763a 45204 allstar-helpers_0.1-5_all.deb
+ f1219e72fa7182309f1d4e771a864fa93b184aaf344487f97bd7b09646511d5c 4521 allstar-helpers_0.1-5_armhf.buildinfo
+Files:
+ 290f24b7c6a1890ae18ca89a4f03ae19 45204 comm optional allstar-helpers_0.1-5_all.deb
+ 3c7d44bf343872005b48a614f7627128 4521 comm optional allstar-helpers_0.1-5_armhf.buildinfo

@@ -1,0 +1,121 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package asl-dahdi-linux
+dpkg-buildpackage: info: source version 1:3.0.1.20200801-0.2
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Rick Elrod <me@ai5a.net>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture armhf
+ debian/rules clean
+dh clean
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/asl-dahdi/linux'
+# Delete the generated dkms files
+rm -f debian/asl-dahdi-dkms.install
+rm -f debian/dkms.conf
+rm -f include/dahdi/version.h
+rm -f dahdi/include/version.h
+[ ! -f Makefile ] || /usr/bin/make dist-clean || true
+make[2]: Entering directory '/asl-dahdi/linux'
+/usr/bin/make -C drivers/dahdi/firmware clean
+make[3]: Entering directory '/asl-dahdi/linux/drivers/dahdi/firmware'
+rm -f dahdi-fw-*.o
+make[3]: Leaving directory '/asl-dahdi/linux/drivers/dahdi/firmware'
+/usr/bin/make -C  M='/asl-dahdi/linux/drivers/dahdi/oct612x' clean
+make[3]: Entering directory '/asl-dahdi/linux'
+make[3]: *** M=/asl-dahdi/linux/drivers/dahdi/oct612x: No such file or directory.  Stop.
+make[3]: Leaving directory '/asl-dahdi/linux'
+make[2]: *** [Makefile:182: clean] Error 2
+make[2]: Leaving directory '/asl-dahdi/linux'
+make[1]: Leaving directory '/asl-dahdi/linux'
+   dh_clean
+ debian/rules binary
+dh binary
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/asl-dahdi/linux'
+# For DKMS
+sed -e "s|#CVERSION#|3.0.1.20200801-0.2|"				 \
+	debian/dkms.conf.in > debian/dkms.conf
+sed -e "s|#CVERSION#|3.0.1.20200801-0.2|"				 \
+	debian/asl-dahdi-dkms.install.in > debian/asl-dahdi-dkms.install
+/usr/bin/make docs
+make[2]: Entering directory '/asl-dahdi/linux'
+date=`stat -c "%y" README`
+asciidoc -n -a toc -a toclevels=4  -a revdate="$date" -o README.html README
+make[2]: Leaving directory '/asl-dahdi/linux'
+/usr/bin/make include/dahdi/version.h
+make[2]: Entering directory '/asl-dahdi/linux'
+make[2]: Leaving directory '/asl-dahdi/linux'
+make[1]: Leaving directory '/asl-dahdi/linux'
+   dh_auto_test
+   create-stamp debian/debhelper-build-stamp
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/asl-dahdi/linux'
+/usr/bin/make install-include DESTDIR=/asl-dahdi/linux/debian/asl-dahdi-source
+make[2]: Entering directory '/asl-dahdi/linux'
+for hdr in kernel.h user.h fasthdlc.h wctdm_user.h dahdi_config.h; do \
+	install -D -m 644 include/dahdi/$hdr /asl-dahdi/linux/debian/asl-dahdi-source/usr/include/dahdi/$hdr; \
+done
+make[2]: Leaving directory '/asl-dahdi/linux'
+make[1]: Leaving directory '/asl-dahdi/linux'
+   debian/rules override_dh_install
+make[1]: Entering directory '/asl-dahdi/linux'
+dh_install
+# driver source code
+mkdir -p /asl-dahdi/linux/debian/tmp/modules/asl-dahdi/debian/generated
+cp Makefile /asl-dahdi/linux/debian/tmp/modules/asl-dahdi/
+cp -p .version /asl-dahdi/linux/debian/tmp/modules/asl-dahdi/
+for dir in build_tools firmware include drivers; do \
+  if [ -d $dir ]; then cp -r $dir /asl-dahdi/linux/debian/tmp/modules/asl-dahdi; fi; \
+done
+# Packaging infrastructure
+cp -r debian/rules debian/changelog debian/copyright\
+  debian/control debian/compat \
+  debian/control.modules.in \
+  /asl-dahdi/linux/debian/tmp/modules/asl-dahdi/debian/
+tar cjf debian/asl-dahdi-source/usr/src/asl-dahdi.tar.bz2 \
+  -C /asl-dahdi/linux/debian/tmp modules \
+  --mode=go=rX,u+rw,a-s --sort=name --mtime="Wed, 07 Sep 2022 00:26:34 -0500"
+rm -rf /asl-dahdi/linux/debian/tmp/modules
+# Adding a call explicitly, as 'dh --with dkms' breaks m-i
+dh_dkms
+make[1]: Leaving directory '/asl-dahdi/linux'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installexamples
+   dh_installudev
+   dh_lintian
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: warning: package asl-dahdi-linux: substitution variable ${perl:Depends} unused, but is defined
+dpkg-gencontrol: warning: package asl-dahdi-dkms: substitution variable ${perl:Depends} unused, but is defined
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'asl-dahdi-dkms' in '../asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb'.
+dpkg-deb: building package 'asl-dahdi-linux' in '../asl-dahdi-linux_3.0.1.20200801-0.2_all.deb'.
+dpkg-deb: building package 'asl-dahdi-source' in '../asl-dahdi-source_3.0.1.20200801-0.2_all.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../asl-dahdi-linux_3.0.1.20200801-0.2_armhf.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian asl-dahdi-linux_3.0.1.20200801-0.2_armhf.changes ...
+warning: the authors of lintian do not recommend running it with root privileges!
+E: asl-dahdi-dkms: arch-independent-package-contains-binary-or-object usr/src/asl-dahdi-3.0.1.20200801-0.2/drivers/dahdi/vpmadt032_loader/vpmadt032_x86_32.o_shipped
+E: asl-dahdi-dkms: unstripped-binary-or-object usr/src/asl-dahdi-3.0.1.20200801-0.2/drivers/dahdi/vpmadt032_loader/vpmadt032_x86_32.o_shipped
+E: asl-dahdi-dkms: arch-independent-package-contains-binary-or-object usr/src/asl-dahdi-3.0.1.20200801-0.2/drivers/dahdi/vpmadt032_loader/vpmadt032_x86_64.o_shipped
+E: asl-dahdi-dkms: unstripped-binary-or-object usr/src/asl-dahdi-3.0.1.20200801-0.2/drivers/dahdi/vpmadt032_loader/vpmadt032_x86_64.o_shipped
+W: asl-dahdi-linux: script-not-executable usr/share/dahdi/dahdi-modules
+N: 1 tag overridden (1 warning)
+Finished running lintian.
