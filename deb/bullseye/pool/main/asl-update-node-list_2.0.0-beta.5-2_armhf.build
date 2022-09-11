@@ -1,0 +1,51 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package asl-update-node-list
+dpkg-buildpackage: info: source version 2.0.0-beta.5-2
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Rick Elrod <me@ai5a.net>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture armhf
+ debian/rules clean
+dh clean
+   dh_clean
+ debian/rules build
+dh build
+   dh_update_autotools_config
+   dh_autoreconf
+   create-stamp debian/debhelper-build-stamp
+ debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installinit
+   dh_installsystemd
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'asl-update-node-list' in '../asl-update-node-list_2.0.0-beta.5-2_all.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../asl-update-node-list_2.0.0-beta.5-2_armhf.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian asl-update-node-list_2.0.0-beta.5-2_armhf.changes ...
+warning: running with root privileges is not recommended!
+W: asl-update-node-list: maintainer-script-calls-systemctl postinst:7
+W: asl-update-node-list: maintainer-script-calls-systemctl postinst:8
+W: asl-update-node-list: no-manual-page usr/sbin/update-node-list-connpgm.sh
+W: asl-update-node-list: no-manual-page usr/sbin/update-node-list.sh
+W: asl-update-node-list: readme-debian-contains-debmake-template
+W: asl-update-node-list: script-with-language-extension usr/sbin/update-node-list-connpgm.sh
+W: asl-update-node-list: script-with-language-extension usr/sbin/update-node-list.sh
+W: asl-update-node-list: wrong-bug-number-in-closes #nnnn in the installed changelog (line 9)
+Finished running lintian.

@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Sun, 11 Sep 2022 02:56:53 -0500
+Source: asl-update-node-list
+Binary: asl-update-node-list
+Architecture: all
+Version: 2.0.0-beta.5-2
+Distribution: unstable
+Urgency: medium
+Maintainer: Rick Elrod <me@ai5a.net>
+Changed-By: Rick Elrod <me@ai5a.net>
+Description:
+ asl-update-node-list - AllStarLink Differential Node List Updater
+Changes:
+ asl-update-node-list (2.0.0-beta.5-2) unstable; urgency=medium
+ .
+   * Rebuild for bullseye and buster
+Checksums-Sha1:
+ 666a8e8b8346b2272472b119a0380e1f45a9945d 4620 asl-update-node-list_2.0.0-beta.5-2_all.deb
+ 98b3932d002525cbee0ccd96c1163711b53c1e5a 4500 asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo
+Checksums-Sha256:
+ 2e9ec71f62ae8a10672c2b836b896b14dc7d3697646cc0541705c816f4b1bd50 4620 asl-update-node-list_2.0.0-beta.5-2_all.deb
+ e3fcadddb354b5f9fe95a658b4c00016522d3b818786a5b071189b83c69f6682 4500 asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo
+Files:
+ ae92a44d34a9a2e4169e3c3379f70cca 4620 comm optional asl-update-node-list_2.0.0-beta.5-2_all.deb
+ a4835a7cb90b69a2a2f5b4404560184b 4500 comm optional asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo

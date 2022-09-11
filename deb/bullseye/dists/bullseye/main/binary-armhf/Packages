@@ -304,6 +304,24 @@ Description: ASL-DAHDI telephony interface - source code for kernel driver
  .
  It is normally used to build kernel modules package: m-a a-i dahdi
 
+Package: asl-update-node-list
+Version: 2.0.0-beta.5-2
+Architecture: all
+Maintainer: Rick Elrod <me@ai5a.net>
+Installed-Size: 25
+Filename: pool/main/asl-update-node-list_2.0.0-beta.5-2_all.deb
+Size: 4608
+MD5sum: 9e2b17ce882c5ee61e25d985eff6f018
+SHA1: 5d22f2acca352e1241a7321472929c242ccad569
+SHA256: 448525659ec16db7228b431c3e9654ebfe9ca5f0c9fae3bf48d4caacd725b26f
+Section: comm
+Priority: optional
+Homepage: http://www.allstarlink.org
+Description: AllStarLink Differential Node List Updater
+ Replaces old rc.updatenodelist to provide differential updates
+ .
+ This package is a fork located at https://github.com/AI5A/asl-nodes-diff/
+
 Package: libtonezone-dev
 Source: asl-dahdi-tools
 Version: 1:3.0.0.1.3
