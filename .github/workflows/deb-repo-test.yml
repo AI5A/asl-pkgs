@@ -44,4 +44,4 @@ jobs:
               > /etc/apt/sources.list.d/ai5a-asl.list
 
             apt-get update
-            apt-get install -y asl-asterisk
+            apt-get install -y asl-asterisk asl-update-node-list

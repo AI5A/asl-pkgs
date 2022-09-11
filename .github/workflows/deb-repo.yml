@@ -37,7 +37,7 @@ jobs:
           repo: AI5A/asl-dahdi
           path: dahdi-buster
 
-      - name: Grab asterisk-bullseye artifacts
+      - name: Grab allstarlink-bullseye artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -48,7 +48,7 @@ jobs:
           repo: AI5A/asl
           path: allstarlink-bullseye
 
-      - name: Grab asterisk-buster artifacts
+      - name: Grab allstarlink-buster artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -58,6 +58,28 @@ jobs:
           name: allstarlink-buster
           repo: AI5A/asl
           path: allstarlink-buster
+
+      - name: Grab asl-update-node-list-bullseye artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: build.yml
+          workflow_conclusion: success
+          branch: fixes
+          name: asl-update-node-list-bullseye
+          repo: AI5A/asl-update-node-list
+          path: asl-update-node-list-bullseye
+
+      - name: Grab asl-update-node-list-buster artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          workflow: build.yml
+          workflow_conclusion: success
+          branch: fixes
+          name: asl-update-node-list-buster
+          repo: AI5A/asl-update-node-list
+          path: asl-update-node-list-buster
 
       - name: Import GPG key
         uses: crazy-max/ghaction-import-gpg@v5
@@ -72,7 +94,11 @@ jobs:
           for codename in buster bullseye; do
             mkdir -p asl-pkgs/deb/$codename/pool/main
             pushd asl-pkgs/deb/$codename
-              mv $repo/dahdi-$codename/* $repo/allstarlink-$codename/* pool/main/
+              mv \
+                $repo/dahdi-$codename/* \
+                $repo/allstarlink-$codename/* \
+                $repo/asl-update-node-list-$codename/* \
+                pool/main/
               for arch in armhf; do
                 mkdir -p dists/$codename/main/binary-$arch
                 dpkg-scanpackages --arch $arch pool/ > dists/$codename/main/binary-$arch/Packages
