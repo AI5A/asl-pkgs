@@ -5,6 +5,7 @@ TODO: Explain build process
 TLDR:
 - https://github.com/ai5a/asl
 - https://github.com/ai5a/asl-dahdi
+- https://github.com/ai5a/asl-update-node-list
 
 These build .deb files on GitHub Actions in an ARM VM.
 
