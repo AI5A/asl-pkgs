@@ -97,12 +97,12 @@ make[1]: Leaving directory '/asl-dahdi/linux'
    dh_missing
    dh_installdeb
    dh_gencontrol
-dpkg-gencontrol: warning: package asl-dahdi-linux: substitution variable ${perl:Depends} unused, but is defined
 dpkg-gencontrol: warning: package asl-dahdi-dkms: substitution variable ${perl:Depends} unused, but is defined
+dpkg-gencontrol: warning: package asl-dahdi-linux: substitution variable ${perl:Depends} unused, but is defined
    dh_md5sums
    dh_builddeb
-dpkg-deb: building package 'asl-dahdi-linux' in '../asl-dahdi-linux_3.0.1.20200801-0.2_all.deb'.
 dpkg-deb: building package 'asl-dahdi-dkms' in '../asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb'.
+dpkg-deb: building package 'asl-dahdi-linux' in '../asl-dahdi-linux_3.0.1.20200801-0.2_all.deb'.
 dpkg-deb: building package 'asl-dahdi-source' in '../asl-dahdi-source_3.0.1.20200801-0.2_all.deb'.
  dpkg-genbuildinfo --build=binary
  dpkg-genchanges --build=binary >../asl-dahdi-linux_3.0.1.20200801-0.2_armhf.changes

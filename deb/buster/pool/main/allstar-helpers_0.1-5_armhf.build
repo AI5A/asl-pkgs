@@ -118,14 +118,14 @@ W: allstar-helpers: binary-without-manpage usr/sbin/wifi-setup
 W: allstar-helpers: binary-without-manpage usr/sbin/write-node-callsigns
 E: allstar-helpers: php-script-but-no-php-cli-dep usr/sbin/astdb.php #!/usr/bin/php
 E: allstar-helpers: python-script-but-no-python-dep usr/sbin/termsize.py #!python
-W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/allmon.css
-W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/index.html
 W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/upload.php
 W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/allstarLogo.png
-W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/download.php
-W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/favicon.ico
-W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/down.php
-W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/router.php
 W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/allowedHosts.ini
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/down.php
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/index.html
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/favicon.ico
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/download.php
 W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/up.html
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/router.php
+W: allstar-helpers: executable-not-elf-or-script usr/bin/backup-server/allmon.css
 Finished running lintian.

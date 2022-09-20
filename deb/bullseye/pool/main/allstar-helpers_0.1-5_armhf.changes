@@ -17,10 +17,10 @@ Changes:
    * Add cron scripts for astdb.php
 Checksums-Sha1:
  4312c47e97b8c6b73e63ff69dfcaf433f80e4b52 45204 allstar-helpers_0.1-5_all.deb
- ef7d8938272861d65cf2a55d8e563467ba11cee1 5010 allstar-helpers_0.1-5_armhf.buildinfo
+ 231c854b1574b79b5eee424fb465287c8deb52ef 5018 allstar-helpers_0.1-5_armhf.buildinfo
 Checksums-Sha256:
  54da43bf39e506b47e6ace3756a238a358923a2fdaa1cdec2de7194f36ac763a 45204 allstar-helpers_0.1-5_all.deb
- 811fcf10ed0bd803b50d358e9e4ed8c11ac920ef2fc480512596db1cacd0e919 5010 allstar-helpers_0.1-5_armhf.buildinfo
+ 803557fa043b86c0d68a7f2ae9e5051c97206d1f7e6bf1c1afb12c964f025cfc 5018 allstar-helpers_0.1-5_armhf.buildinfo
 Files:
  290f24b7c6a1890ae18ca89a4f03ae19 45204 comm optional allstar-helpers_0.1-5_all.deb
- 7124c5607515298e2c1b6706e1afec2f 5010 comm optional allstar-helpers_0.1-5_armhf.buildinfo
+ 3e9810b9ceb1dad37e6beb3e173fc52b 5018 comm optional allstar-helpers_0.1-5_armhf.buildinfo

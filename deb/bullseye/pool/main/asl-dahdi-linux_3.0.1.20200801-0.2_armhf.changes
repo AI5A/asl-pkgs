@@ -19,15 +19,15 @@ Changes:
 Checksums-Sha1:
  9926b57acfb85264b4d9c80f3c4099580ada083d 6132392 asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
  fe1cfc5154b3179b99ca307bd1dc0edab22f9a17 43088 asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
- 2460bef56b5c78971e77b5d5f124db7c8cbf2d62 6456 asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
+ 2df6b35776493a888d90a9711bfcce7b5eb8d7a8 6456 asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
  c0b84b806f11d85d65403fc27be1d67ef9b94ea3 6588080 asl-dahdi-source_3.0.1.20200801-0.2_all.deb
 Checksums-Sha256:
  db02cf5a861b6460a02fd12d9007ebe9a517a1edcf7db4bf56c99a7695a2a817 6132392 asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
  d83d16f79b0b6bba635ac3facf48890c4bcd33523be58d4e810c758b6135c114 43088 asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
- 49d22e7325c9b69662d80f2c5a6d1e08b8e9e6361bd91e1b2b4e9e5285bc5af6 6456 asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
+ c6ef24630d9360fb8b5e08cc29637bcdf483b3b314b25b23709e715aa0e5b0a9 6456 asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
  259c0e4bdbd515391303af62c2790a2a689103752ba5a0e44de4efa489b67758 6588080 asl-dahdi-source_3.0.1.20200801-0.2_all.deb
 Files:
  0bcce569761d225d15e8ffbd3a333057 6132392 kernel optional asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
  0f3510584a4aa4857f1386942c812a14 43088 comm optional asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
- ab39576f814ad6fde5fc0899af03ee86 6456 comm optional asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
+ 343ebcb9d2b30c2301108a39c42da128 6456 comm optional asl-dahdi-linux_3.0.1.20200801-0.2_armhf.buildinfo
  cf88565bc7d1060a549ffde0cd86b78f 6588080 kernel optional asl-dahdi-source_3.0.1.20200801-0.2_all.deb

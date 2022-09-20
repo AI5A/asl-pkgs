@@ -934,13 +934,13 @@ dh_installexamples: warning: Cannot find (any matches for) "*.conf" (tried in .)
    dh_strip
    dh_makeshlibs
    dh_shlibdeps
-dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/asl-dahdi/usr/sbin/fxotune debian/asl-dahdi/usr/sbin/astribank_hexload debian/asl-dahdi/usr/sbin/dahdi_scan debian/asl-dahdi/usr/sbin/dahdi_cfg debian/asl-dahdi/usr/sbin/astribank_is_starting debian/asl-dahdi/usr/sbin/sethdlc debian/asl-dahdi/usr/sbin/dahdi_tool debian/asl-dahdi/usr/sbin/dahdi_maint debian/asl-dahdi/usr/sbin/astribank_tool debian/asl-dahdi/usr/sbin/astribank_allow debian/asl-dahdi/usr/sbin/dahdi_test debian/asl-dahdi/usr/sbin/dahdi_monitor were not linked against ld-linux-armhf.so.3 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/asl-dahdi/usr/sbin/dahdi_tool debian/asl-dahdi/usr/sbin/dahdi_cfg debian/asl-dahdi/usr/sbin/dahdi_monitor debian/asl-dahdi/usr/sbin/astribank_tool debian/asl-dahdi/usr/sbin/dahdi_scan debian/asl-dahdi/usr/sbin/sethdlc debian/asl-dahdi/usr/sbin/astribank_hexload debian/asl-dahdi/usr/sbin/dahdi_maint debian/asl-dahdi/usr/sbin/fxotune debian/asl-dahdi/usr/sbin/astribank_allow debian/asl-dahdi/usr/sbin/astribank_is_starting debian/asl-dahdi/usr/sbin/dahdi_test were not linked against ld-linux-armhf.so.3 (they use none of the library's symbols)
    dh_installdeb
    dh_gencontrol
    dh_md5sums
    dh_builddeb
-dpkg-deb: building package 'libtonezone2.0-dbgsym' in '../libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb'.
 dpkg-deb: building package 'asl-dahdi' in '../asl-dahdi_3.0.0.1.3_armhf.deb'.
+dpkg-deb: building package 'libtonezone2.0-dbgsym' in '../libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb'.
 dpkg-deb: building package 'libtonezone-dev' in '../libtonezone-dev_3.0.0.1.3_armhf.deb'.
 dpkg-deb: building package 'asl-dahdi-dbgsym' in '../asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb'.
 dpkg-deb: building package 'libtonezone2.0' in '../libtonezone2.0_3.0.0.1.3_armhf.deb'.
@@ -982,8 +982,8 @@ E: asl-dahdi: doc-base-file-references-missing-file dahdi:12 /usr/share/doc/dahd
 E: asl-dahdi: doc-base-file-references-missing-file dahdi.astribank:8 /usr/share/doc/dahdi/README.Astribank.html
 E: asl-dahdi: doc-base-file-references-missing-file dahdi.astribank:9 /usr/share/doc/dahdi/README.Astribank.html
 E: asl-dahdi: doc-base-file-references-missing-file dahdi.astribank:12 /usr/share/doc/dahdi/README.Astribank.gz
-W: libtonezone2.0: syntax-error-in-debian-changelog line 11 "badly formatted trailer line"
-W: libtonezone2.0: syntax-error-in-debian-changelog line 13 "found start of entry where expected more change data or trailer"
 W: libtonezone-dev: syntax-error-in-debian-changelog line 11 "badly formatted trailer line"
 W: libtonezone-dev: syntax-error-in-debian-changelog line 13 "found start of entry where expected more change data or trailer"
+W: libtonezone2.0: syntax-error-in-debian-changelog line 11 "badly formatted trailer line"
+W: libtonezone2.0: syntax-error-in-debian-changelog line 13 "found start of entry where expected more change data or trailer"
 Finished running lintian.

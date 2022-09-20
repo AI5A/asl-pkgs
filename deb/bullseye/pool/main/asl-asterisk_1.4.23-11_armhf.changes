@@ -1,0 +1,46 @@
+Format: 1.8
+Date: Thu, 15 Sep 2022 15:18:13 -0500
+Source: asl-asterisk
+Binary: asl-asterisk asl-asterisk-config asl-asterisk-dbg asl-asterisk-dev asl-asterisk-doc asl-asterisk-sounds-main
+Architecture: all armhf
+Version: 10:1.4.23-11
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: AllStarLink <developers@allstarlink.org>
+Changed-By: Rick Elrod <me@ai5a.net>
+Description:
+ asl-asterisk - Open Source Private Branch Exchange (PBX)
+ asl-asterisk-config - Configuration files for Asterisk
+ asl-asterisk-dbg - Debugging symbols for Asterisk
+ asl-asterisk-dev - Development files for Asterisk
+ asl-asterisk-doc - Source code documentation for Asterisk
+ asl-asterisk-sounds-main - Core Sound files for Asterisk (English)
+Changes:
+ asl-asterisk (10:1.4.23-11) UNRELEASED; urgency=medium
+ .
+   * Change morse id max bound
+   * Change hang timer for telemetry
+Checksums-Sha1:
+ 8c76a9dd7aa5a405c8ae6bae7363bc4bae5c15df 38908 asl-asterisk-config_1.4.23-11_all.deb
+ 3cc43be01578de0da0e80617e7e0c355db85e1ff 16991636 asl-asterisk-dbg_1.4.23-11_armhf.deb
+ 0857e04f9fa4748531712bfcb9a948eaf51adb9e 134252 asl-asterisk-dev_1.4.23-11_all.deb
+ af829d13a84ef6a56e325afe253b0007405363ac 5424 asl-asterisk-doc_1.4.23-11_all.deb
+ f2e32196e726c6b507c85dbbb3a68e4c5e45eaf5 6294124 asl-asterisk-sounds-main_1.4.23-11_all.deb
+ 7abf72cef3e9d16531deef46bcee549f0106ad74 11272 asl-asterisk_1.4.23-11_armhf.buildinfo
+ 1d6e6c8ebd44b65562edd16bb0e40637b5b3a913 1702244 asl-asterisk_1.4.23-11_armhf.deb
+Checksums-Sha256:
+ c8094b8fe0927c5c5c439e3a1472fcce0355fdffe9767865363437fce07a96d9 38908 asl-asterisk-config_1.4.23-11_all.deb
+ 194aa997dc8b1441c63726b605ebbe0e625295b1101007cfee95c2069db4cd60 16991636 asl-asterisk-dbg_1.4.23-11_armhf.deb
+ eb6aaceaed88bad31985045924a979181123912a0812a21db28adca4a3175676 134252 asl-asterisk-dev_1.4.23-11_all.deb
+ 1bb49020f2abba0d190da00517ae964de26ab38ad3afccea4c64180ed02b69f8 5424 asl-asterisk-doc_1.4.23-11_all.deb
+ f5f68447f49787a04929d9ada287b669d06b85be83fe86ca90244f974b8a0082 6294124 asl-asterisk-sounds-main_1.4.23-11_all.deb
+ dd7de3d37ac3ec19d1420aed8b4083cdbe64d8fb755185a0967dbe700ba8b6fb 11272 asl-asterisk_1.4.23-11_armhf.buildinfo
+ 6e0f5dbeebe4d7788d081c822018aa60ba64beaaa05d9332cf02567964a2cd4a 1702244 asl-asterisk_1.4.23-11_armhf.deb
+Files:
+ dcfd6613e76ca73644ca746c7e101db7 38908 comm optional asl-asterisk-config_1.4.23-11_all.deb
+ b7a1ef8e1470f23fedac372a4c4c51c7 16991636 devel extra asl-asterisk-dbg_1.4.23-11_armhf.deb
+ 2049a69576a5ab90b2656239d55bffe8 134252 devel extra asl-asterisk-dev_1.4.23-11_all.deb
+ 8003b2ea1245b5db7394d5b81885eebe 5424 doc extra asl-asterisk-doc_1.4.23-11_all.deb
+ 9ae3c15c8eec09b126d5520376ebc036 6294124 comm optional asl-asterisk-sounds-main_1.4.23-11_all.deb
+ e921b09cab85b5304e7fb87afc173659 11272 comm optional asl-asterisk_1.4.23-11_armhf.buildinfo
+ abd4450b7d3c428861497271a8f2cf2e 1702244 comm optional asl-asterisk_1.4.23-11_armhf.deb

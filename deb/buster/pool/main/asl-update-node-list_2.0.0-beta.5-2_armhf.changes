@@ -16,10 +16,10 @@ Changes:
    * Rebuild for bullseye and buster
 Checksums-Sha1:
  666a8e8b8346b2272472b119a0380e1f45a9945d 4620 asl-update-node-list_2.0.0-beta.5-2_all.deb
- 98b3932d002525cbee0ccd96c1163711b53c1e5a 4500 asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo
+ 9eec7db5bd8587ca464938ca662536fd9d053a1e 4500 asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo
 Checksums-Sha256:
  2e9ec71f62ae8a10672c2b836b896b14dc7d3697646cc0541705c816f4b1bd50 4620 asl-update-node-list_2.0.0-beta.5-2_all.deb
- e3fcadddb354b5f9fe95a658b4c00016522d3b818786a5b071189b83c69f6682 4500 asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo
+ 4fd15df7cfa3b811ce28fa5968852284c00dda8eefbce7c336cf2529f6b9939b 4500 asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo
 Files:
  ae92a44d34a9a2e4169e3c3379f70cca 4620 comm optional asl-update-node-list_2.0.0-beta.5-2_all.deb
- a4835a7cb90b69a2a2f5b4404560184b 4500 comm optional asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo
+ 51a0795474fabd65c7d9d8ebe8507701 4500 comm optional asl-update-node-list_2.0.0-beta.5-2_armhf.buildinfo

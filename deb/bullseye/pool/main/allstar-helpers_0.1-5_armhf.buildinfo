@@ -11,7 +11,7 @@ Checksums-Sha256:
  54da43bf39e506b47e6ace3756a238a358923a2fdaa1cdec2de7194f36ac763a 45204 allstar-helpers_0.1-5_all.deb
 Build-Origin: Raspbian
 Build-Architecture: armhf
-Build-Date: Sat, 10 Sep 2022 07:49:13 +0100
+Build-Date: Mon, 19 Sep 2022 11:21:54 +0100
 Build-Tainted-By:
  merged-usr-via-aliased-dirs
 Installed-Build-Depends:
@@ -135,7 +135,7 @@ Installed-Build-Depends:
  libtool (= 2.4.6-15),
  libubsan1 (= 10.2.1-6+rpi1),
  libuchardet0 (= 0.0.7-1),
- libudev1 (= 247.3-7+rpi1),
+ libudev1 (= 247.3-7+rpi1+deb11u1),
  libunistring2 (= 0.9.10-4),
  libuuid1 (= 2.36.1-8+deb11u1),
  libxml2 (= 2.9.10+dfsg-6.7+deb11u2),
