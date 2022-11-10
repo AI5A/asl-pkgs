@@ -16,7 +16,7 @@ ARTIFACTS = [
     ("AI5A/asl-update-node-list", "fixes", "asl-update-node-list-bullseye", "build.yml"),
     ("AI5A/asl-update-node-list", "fixes", "asl-update-node-list-buster", "build.yml"),
 ]
-PKGS = ["asl-dahdi", "asl", "asl-update-node-list"]
+PKGS = ["asl-dahdi", "allstarlink", "asl-update-node-list"]
 
 debian_versions = set(
     x[2].split("-")[-2] for x in ARTIFACTS if "update-node-list" not in x[2]
