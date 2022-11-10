@@ -99,7 +99,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        workflow: build-arm.yml
+        workflow: build.yml
         name: asl-update-node-list-bullseye
         path: asl-update-node-list-bullseye
         repo: AI5A/asl-update-node-list
@@ -109,7 +109,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        workflow: build-arm.yml
+        workflow: build.yml
         name: asl-update-node-list-buster
         path: asl-update-node-list-buster
         repo: AI5A/asl-update-node-list
@@ -123,7 +123,7 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install -y gcc dpkg-dev gpg
     - name: Move debs
-      run: "\nrepo=\"$(pwd)\"\nfor codename in bullseye buster; do\n    # Create pool\
+      run: "\nrepo=\"$(pwd)\"\nfor codename in buster bullseye; do\n    # Create pool\
         \ directory\n    mkdir -p asl-pkgs/deb/$codename/pool/main/\n    # Move the\
         \ debs\n    pushd asl-pkgs/deb/$codename/pool/main/\n    for pkg in asl-dahdi\
         \ asl asl-update-node-list; do\n        mv -v \"$repo/$pkg-$codename\"-*/*\n\

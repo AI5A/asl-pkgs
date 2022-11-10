@@ -4,17 +4,17 @@
 import yaml
 
 ARTIFACTS = [
-    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-bullseye-x86_64"),
-    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-buster-x86_64"),
-    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-bullseye-armv7l"),
-    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-buster-armv7l"),
-    ("AI5A/asl", "fixes", "allstarlink-bullseye-x86_64"),
-    ("AI5A/asl", "fixes", "allstarlink-buster-x86_64"),
-    ("AI5A/asl", "fixes", "allstarlink-bullseye-armv7l"),
-    ("AI5A/asl", "fixes", "allstarlink-buster-armv7l"),
+    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-bullseye-x86_64", "build-x86.yml"),
+    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-buster-x86_64", "build-x86.yml"),
+    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-bullseye-armv7l", "build-arm.yml"),
+    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-buster-armv7l", "build-arm.yml"),
+    ("AI5A/asl", "fixes", "allstarlink-bullseye-x86_64", "build-x86.yml"),
+    ("AI5A/asl", "fixes", "allstarlink-buster-x86_64", "build-x86.yml"),
+    ("AI5A/asl", "fixes", "allstarlink-bullseye-armv7l", "build-arm.yml"),
+    ("AI5A/asl", "fixes", "allstarlink-buster-armv7l", "build-arm.yml"),
     # These two are noarch, so we just use the armv7l ones
-    ("AI5A/asl-update-node-list", "fixes", "asl-update-node-list-bullseye"),
-    ("AI5A/asl-update-node-list", "fixes", "asl-update-node-list-buster"),
+    ("AI5A/asl-update-node-list", "fixes", "asl-update-node-list-bullseye", "build.yml"),
+    ("AI5A/asl-update-node-list", "fixes", "asl-update-node-list-buster", "build.yml"),
 ]
 PKGS = ["asl-dahdi", "asl", "asl-update-node-list"]
 
@@ -65,14 +65,14 @@ tree .
 
 def generate_workflow():
     artifact_steps = []
-    for repo, branch, artifact in ARTIFACTS:
+    for repo, branch, artifact, workflow in ARTIFACTS:
         artifact_steps.append(
             {
                 "name": f"Download {artifact}",
                 "uses": "dawidd6/action-download-artifact@v2",
                 "with": {
                     "github_token": "${{ secrets.GITHUB_TOKEN }}",
-                    "workflow": f'build-{"x86" if "x86" in artifact else "arm"}.yml',
+                    "workflow": workflow,
                     "name": artifact,
                     "path": artifact,
                     "repo": repo,
