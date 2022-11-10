@@ -18,9 +18,9 @@ ARTIFACTS = [
 ]
 PKGS = ["asl-dahdi", "allstarlink", "asl-update-node-list"]
 
-debian_versions = set(
+debian_versions = list(set(
     x[2].split("-")[-2] for x in ARTIFACTS if "update-node-list" not in x[2]
-)
+))
 arch_map = {
     "x86_64": "amd64",
     "armv7l": "armhf",
