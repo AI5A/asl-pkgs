@@ -45,33 +45,33 @@ jobs:
         repo: AI5A/asl-dahdi
         branch: fixes
         workflow_conclusion: success
-    - name: Download asl-bullseye-x86_64
+    - name: Download allstarlink-bullseye-x86_64
       uses: dawidd6/action-download-artifact@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: build-x86.yml
-        name: asl-bullseye-x86_64
-        path: asl-bullseye-x86_64
+        name: allstarlink-bullseye-x86_64
+        path: allstarlink-bullseye-x86_64
         repo: AI5A/asl
         branch: fixes
         workflow_conclusion: success
-    - name: Download asl-buster-x86_64
+    - name: Download allstarlink-buster-x86_64
       uses: dawidd6/action-download-artifact@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: build-x86.yml
-        name: asl-buster-x86_64
-        path: asl-buster-x86_64
+        name: allstarlink-buster-x86_64
+        path: allstarlink-buster-x86_64
         repo: AI5A/asl
         branch: fixes
         workflow_conclusion: success
-    - name: Download asl-bullseye-armv7l
+    - name: Download allstarlink-bullseye-armv7l
       uses: dawidd6/action-download-artifact@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: build-arm.yml
-        name: asl-bullseye-armv7l
-        path: asl-bullseye-armv7l
+        name: allstarlink-bullseye-armv7l
+        path: allstarlink-bullseye-armv7l
         repo: AI5A/asl
         branch: fixes
         workflow_conclusion: success
