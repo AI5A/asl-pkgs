@@ -45,6 +45,16 @@ jobs:
         repo: AI5A/asl-dahdi
         branch: fixes
         workflow_conclusion: success
+    - name: Download asl-dahdi-buster-armv7l
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        workflow: build-arm.yml
+        name: asl-dahdi-buster-armv7l
+        path: asl-dahdi-buster-armv7l
+        repo: AI5A/asl-dahdi
+        branch: fixes
+        workflow_conclusion: success
     - name: Download allstarlink-bullseye-x86_64
       uses: dawidd6/action-download-artifact@v2
       with:
@@ -75,33 +85,33 @@ jobs:
         repo: AI5A/asl
         branch: fixes
         workflow_conclusion: success
-    - name: Download asl-update-node-list-bullseye-x86_64
-      uses: dawidd6/action-download-artifact@v2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        workflow: build-x86.yml
-        name: asl-update-node-list-bullseye-x86_64
-        path: asl-update-node-list-bullseye-x86_64
-        repo: AI5A/asl-update-node-list
-        branch: fixes
-        workflow_conclusion: success
-    - name: Download asl-update-node-list-buster-x86_64
-      uses: dawidd6/action-download-artifact@v2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        workflow: build-x86.yml
-        name: asl-update-node-list-buster-x86_64
-        path: asl-update-node-list-buster-x86_64
-        repo: AI5A/asl-update-node-list
-        branch: fixes
-        workflow_conclusion: success
-    - name: Download asl-update-node-list-bullseye-armv7l
+    - name: Download allstarlink-buster-armv7l
       uses: dawidd6/action-download-artifact@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         workflow: build-arm.yml
-        name: asl-update-node-list-bullseye-armv7l
-        path: asl-update-node-list-bullseye-armv7l
+        name: allstarlink-buster-armv7l
+        path: allstarlink-buster-armv7l
+        repo: AI5A/asl
+        branch: fixes
+        workflow_conclusion: success
+    - name: Download asl-update-node-list-bullseye
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        workflow: build-arm.yml
+        name: asl-update-node-list-bullseye
+        path: asl-update-node-list-bullseye
+        repo: AI5A/asl-update-node-list
+        branch: fixes
+        workflow_conclusion: success
+    - name: Download asl-update-node-list-buster
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        workflow: build-arm.yml
+        name: asl-update-node-list-buster
+        path: asl-update-node-list-buster
         repo: AI5A/asl-update-node-list
         branch: fixes
         workflow_conclusion: success
