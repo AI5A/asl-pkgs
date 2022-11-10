@@ -123,11 +123,11 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install -y gcc dpkg-dev gpg
     - name: Move debs
-      run: "\nrepo=\"$(pwd)\"\nfor codename in buster bullseye; do\n    # Create pool\
+      run: "\nrepo=\"$(pwd)\"\nfor codename in bullseye buster; do\n    # Create pool\
         \ directory\n    mkdir -p asl-pkgs/deb/$codename/pool/main/\n    # Move the\
         \ debs\n    pushd asl-pkgs/deb/$codename/pool/main/\n    for pkg in asl-dahdi\
-        \ asl asl-update-node-list; do\n        mv -v \"$repo/$pkg-$codename\"-*/*\n\
-        \    done\n    popd\n\n    # Create dist hierarchy\n    pushd asl-pkgs/deb/$codename/\n\
+        \ asl asl-update-node-list; do\n        mv -v \"$repo/$pkg-$codename\"-*/*\
+        \ .\n    done\n    popd\n\n    # Create dist hierarchy\n    pushd asl-pkgs/deb/$codename/\n\
         \    for arch in amd64 armhf; do\n        mkdir -p dists/$codename/main/binary-$arch/\n\
         \        dpkg-scanpackages --arch $arch pool/main/ | gzip -9c > dists/$codename/main/binary-$arch/Packages.gz\n\
         \    done\n    popd\n\n    # Create Release file\n    pushd asl-pkgs/deb/$codename/\n\
