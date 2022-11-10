@@ -1,0 +1,85 @@
+Suite: stable
+Codename: buster
+Version: 1.0
+Architectures: amd64 armhf
+Components: main
+Description: AI5A AllStarLink Debian Repository
+Date: Thu, 10 Nov 2022 09:07:49 +0000
+MD5Sum:
+ be7b2d88940a2cf881601ab972f772c5 9440 dists/buster/main/binary-armhf/Packages.gz
+ 110bc72fc9cfc1da3b1d716f45d4c5b9 9423 dists/buster/main/binary-amd64/Packages.gz
+ 1d65555e0713818c3d8bca4777d52bf9 134256 pool/main/asl-asterisk-dev_1.4.23-12_all.deb
+ db5a3416435243dc4d1e54c77cb4d832 16997168 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
+ 11e037b82b5ea5eea29baa57ee3e8195 26924 pool/main/libtonezone-dev_3.0.0.1.3_amd64.deb
+ fea5576119ed285f1cfcdd2b039bfd5c 26172 pool/main/libtonezone2.0_3.0.0.1.3_armhf.deb
+ 9290e725a251dda487026bfb2069dc02 317532 pool/main/asl-dahdi_3.0.0.1.3_armhf.deb
+ f82146c7a51933604b726f0601431ff4 12700 pool/main/libtonezone2.0-dbgsym_3.0.0.1.3_amd64.deb
+ 594f45f359858c2bd05e29da9f03347d 586212 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_amd64.deb
+ 302f47619535016f68b5efdcd2618437 26144 pool/main/libtonezone-dev_3.0.0.1.3_armhf.deb
+ 8ce5c17deb1ec74923ff6a9fb7b706d6 12732 pool/main/libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb
+ 54b299be2ba71e995d5d2c418ca59f90 6293612 pool/main/asl-asterisk-sounds-main_1.4.23-12_all.deb
+ 2698b8f12e69ea2121ab638549e27bad 26728 pool/main/libtonezone2.0_3.0.0.1.3_amd64.deb
+ 8992f408252877dedd1718cd3c7e6243 38936 pool/main/asl-asterisk-config_1.4.23-12_all.deb
+ 290f24b7c6a1890ae18ca89a4f03ae19 45204 pool/main/allstar-helpers_0.1-5_all.deb
+ f9548a8f058f789dbd9c3102229fe668 345960 pool/main/asl-dahdi_3.0.0.1.3_amd64.deb
+ dc769d4998ce39ddaeee3c86ddb02293 6132188 pool/main/asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
+ 0f3510584a4aa4857f1386942c812a14 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
+ b055e372c8b2122df8175d9514bf2240 5424 pool/main/asl-asterisk-doc_1.4.23-12_all.deb
+ 1184e47ae13ebcf13d9a9e011a669a37 571232 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
+ 95d35a421a0bc2dad5fda5f8b53b5cf5 1690956 pool/main/asl-asterisk_1.4.23-12_armhf.deb
+ 47014d79ea0e950a1158228a13e464e4 6587776 pool/main/asl-dahdi-source_3.0.1.20200801-0.2_all.deb
+ ae92a44d34a9a2e4169e3c3379f70cca 4620 pool/main/asl-update-node-list_2.0.0-beta.5-2_all.deb
+ ba97eb75cf20031820762da346cdbc18 1921388 pool/main/asl-asterisk_1.4.23-12_amd64.deb
+ 839c7eec567d56b4c6d37df7bfc95b13 16885652 pool/main/asl-asterisk-dbg_1.4.23-12_armhf.deb
+SHA1:
+ 19af30ab9069cdf9b72f27d535febea15edade2d 9440 dists/buster/main/binary-armhf/Packages.gz
+ e9277c13c3d2a4dba21f4c98002e5d8eae7bc55e 9423 dists/buster/main/binary-amd64/Packages.gz
+ 814cb8fde7d0fbcae76c78d049233bb9914e871c 134256 pool/main/asl-asterisk-dev_1.4.23-12_all.deb
+ 128084ce79626d8956cdeaaf0a8f993ad894a63e 16997168 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
+ 5d0cffc1fb302c505aeb8a22e17cfebe2c11d748 26924 pool/main/libtonezone-dev_3.0.0.1.3_amd64.deb
+ dcb48fda61e4c4dc766306776b2f4babc0220233 26172 pool/main/libtonezone2.0_3.0.0.1.3_armhf.deb
+ 2a76e65826e35a81d803f02583945b26bd0091e6 317532 pool/main/asl-dahdi_3.0.0.1.3_armhf.deb
+ 870b6dfe4789fee00835d91476ae980b0489ce4e 12700 pool/main/libtonezone2.0-dbgsym_3.0.0.1.3_amd64.deb
+ 7c3d3fe8215814b0d86416cdabb91dc23ff1f748 586212 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_amd64.deb
+ daf55c0f6f08ad08b1e510a93f533f0995fc995d 26144 pool/main/libtonezone-dev_3.0.0.1.3_armhf.deb
+ 10cc1cb7ec6095fa426cf626baf327f778ab8977 12732 pool/main/libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb
+ d6c3df8d42150f6a07fe58ced27bb7d81666835f 6293612 pool/main/asl-asterisk-sounds-main_1.4.23-12_all.deb
+ 1d41b9a4055057e8d74a33282cb1481cd9d545b8 26728 pool/main/libtonezone2.0_3.0.0.1.3_amd64.deb
+ a322031157ced313e01bd27ff7ea8f9ff48f9ebc 38936 pool/main/asl-asterisk-config_1.4.23-12_all.deb
+ 4312c47e97b8c6b73e63ff69dfcaf433f80e4b52 45204 pool/main/allstar-helpers_0.1-5_all.deb
+ 310d15d1137e67baaa2309ff739ee8c3e65e96f9 345960 pool/main/asl-dahdi_3.0.0.1.3_amd64.deb
+ cc9f3b885daab41e91c339a74e61a77db037ba48 6132188 pool/main/asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
+ fe1cfc5154b3179b99ca307bd1dc0edab22f9a17 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
+ bbddfc3f10fd461d6d8434b449ecb6f391be7c42 5424 pool/main/asl-asterisk-doc_1.4.23-12_all.deb
+ 21aedafe32a50a21463aa03f8a1a523cf06c3cd3 571232 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
+ dbf0e373d74f8dd3c83bfc0af9ca9f56eb9d3dde 1690956 pool/main/asl-asterisk_1.4.23-12_armhf.deb
+ ae9f9901488fe128e30712e79ac96b48db7c2a5e 6587776 pool/main/asl-dahdi-source_3.0.1.20200801-0.2_all.deb
+ 666a8e8b8346b2272472b119a0380e1f45a9945d 4620 pool/main/asl-update-node-list_2.0.0-beta.5-2_all.deb
+ 22e04a30f15ac752bc928019059b0d8ac06dfe18 1921388 pool/main/asl-asterisk_1.4.23-12_amd64.deb
+ a0869e491f2b11b5d7cb42d5c2678ab26de982a4 16885652 pool/main/asl-asterisk-dbg_1.4.23-12_armhf.deb
+SHA256:
+ 7d34bef1f3b5ff69e736c1152a5346fd01620a6c7feba774d5d6431c9ee0f261 9440 dists/buster/main/binary-armhf/Packages.gz
+ 6a780ae88aa182f10bda5f111617548a91dcc9b7048aecff659f4f2dec37982a 9423 dists/buster/main/binary-amd64/Packages.gz
+ e88d21a357fa868cf87e7636f6780100f596dd9d5f9f6cbce8aed8d105997d47 134256 pool/main/asl-asterisk-dev_1.4.23-12_all.deb
+ b3f7c6f6ba102031e751e1b98037284b3124865ebe93a07efde8b1e70a832d65 16997168 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
+ 4e8a4cce495e3363b22a1ae48bee8d7f68e13689874cab2fa99dc105ca9044d9 26924 pool/main/libtonezone-dev_3.0.0.1.3_amd64.deb
+ cfd55c00f755c2b63ae4612123b410ecb32cebd922fe2e8af7f70863c7218d90 26172 pool/main/libtonezone2.0_3.0.0.1.3_armhf.deb
+ d9f09fb8b7b275a923087656ca22caf681c91862a5476c2fda606f04bb38da22 317532 pool/main/asl-dahdi_3.0.0.1.3_armhf.deb
+ 79c62b32f87ecfd2c24995c73f93d900b20f2f20bffd54cb512937d6541f6548 12700 pool/main/libtonezone2.0-dbgsym_3.0.0.1.3_amd64.deb
+ 387023f45512a4db3c20a8681df63aff94fdd440524b2a666d9fc8bb3ef73544 586212 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_amd64.deb
+ f504c6a6251adaf05d26de850822a3ab4a6522c88269262adc1dda806036bce7 26144 pool/main/libtonezone-dev_3.0.0.1.3_armhf.deb
+ b52c737759abb8933afc64ce6f9775d6f8c8a49ef78f354c673d34d7c63b40fc 12732 pool/main/libtonezone2.0-dbgsym_3.0.0.1.3_armhf.deb
+ 128b259d1653a3cfc555fd42de1f5d171fe4e9df6e37967afbf56923b3bd0eee 6293612 pool/main/asl-asterisk-sounds-main_1.4.23-12_all.deb
+ 1b04023b9dac131a1d8e58ceda673bcbdb7ac4c78e34e6d3943c2d5a347241fd 26728 pool/main/libtonezone2.0_3.0.0.1.3_amd64.deb
+ 0bd8dc6b85390581c008f55e9ea80557b14704281a28ef7d3925235da40a1451 38936 pool/main/asl-asterisk-config_1.4.23-12_all.deb
+ 54da43bf39e506b47e6ace3756a238a358923a2fdaa1cdec2de7194f36ac763a 45204 pool/main/allstar-helpers_0.1-5_all.deb
+ 8481f0cea94e4d29fe61a04f7416926a55bd4403314db1151b15aa76e87d098e 345960 pool/main/asl-dahdi_3.0.0.1.3_amd64.deb
+ 4bbef7096f721096fc95b3b5b1568d754e733aaeb4bb5b36604c2d21427eb5a4 6132188 pool/main/asl-dahdi-dkms_3.0.1.20200801-0.2_all.deb
+ d83d16f79b0b6bba635ac3facf48890c4bcd33523be58d4e810c758b6135c114 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
+ 042cd5ef8fa2b165e4f5b37871ea477533fdef0ac455552e31598bf46b2bebdf 5424 pool/main/asl-asterisk-doc_1.4.23-12_all.deb
+ 722a47e205f902d73e5475b7ad423c34b8d8d414186aa0c4ee5e5b696272953c 571232 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
+ cd0b2ddf8a3acb05559e67eca6c1fa5c42b33798e161aeef0e3d8718694c68cf 1690956 pool/main/asl-asterisk_1.4.23-12_armhf.deb
+ 14afd71e967f722139d3a5bd116fb48302ce0bb22e57ff0c4e58884be5288336 6587776 pool/main/asl-dahdi-source_3.0.1.20200801-0.2_all.deb
+ 2e9ec71f62ae8a10672c2b836b896b14dc7d3697646cc0541705c816f4b1bd50 4620 pool/main/asl-update-node-list_2.0.0-beta.5-2_all.deb
+ 1f1e1f954ed9af570a664b93a80cfc832af0ab8d96792d2e0c533de61b3d49ef 1921388 pool/main/asl-asterisk_1.4.23-12_amd64.deb
+ 526433a00c54b14b5de3d074077a52c53579d116e4f109bde871bd2fbc7565c3 16885652 pool/main/asl-asterisk-dbg_1.4.23-12_armhf.deb
