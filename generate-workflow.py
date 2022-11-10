@@ -34,7 +34,7 @@ for codename in {' '.join(debian_versions)}; do
     # Move the debs
     pushd asl-pkgs/deb/$codename/pool/main/
     for pkg in {' '.join(PKGS)}; do
-        mv -v "$repo/$pkg-$codename"-*/* .
+        cp -v "$repo/$pkg-$codename"-*/* .
     done
     popd
 
