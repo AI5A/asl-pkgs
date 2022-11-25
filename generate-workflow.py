@@ -44,7 +44,7 @@ for codename in {' '.join(debian_versions)}; do
     pushd asl-pkgs/deb/$codename/
     for arch in {' '.join(arch_map.values())}; do
         mkdir -p dists/$codename/main/binary-$arch/
-        dpkg-scanpackages --arch $arch pool/main/ | gzip -9c > dists/$codename/main/binary-$arch/Packages.gz
+        dpkg-scanpackages --arch $arch pool/main/ > dists/$codename/main/binary-$arch/Packages
     done
     popd
 

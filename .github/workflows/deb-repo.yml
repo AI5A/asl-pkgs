@@ -130,7 +130,7 @@ jobs:
         \ do\n            mv -v $file .\n        done\n    done\n    popd\n\n    #\
         \ Create dist hierarchy\n    pushd asl-pkgs/deb/$codename/\n    for arch in\
         \ amd64 armhf; do\n        mkdir -p dists/$codename/main/binary-$arch/\n \
-        \       dpkg-scanpackages --arch $arch pool/main/ | gzip -9c > dists/$codename/main/binary-$arch/Packages.gz\n\
+        \       dpkg-scanpackages --arch $arch pool/main/ > dists/$codename/main/binary-$arch/Packages\n\
         \    done\n    popd\n\n    # Create Release file\n    pushd asl-pkgs/deb/$codename/\n\
         \      bash $repo/generate-release.sh $codename > Release\n      gpg --armour\
         \ --sign --detach-sign --output Release.gpg Release\n      mv -v Release.gpg\
