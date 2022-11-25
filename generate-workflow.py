@@ -125,11 +125,14 @@ def generate_workflow():
                         "run": GENERATE_INDEXES,
                     },
                     {
-                        "name": "Push to GitHub Pages",
-                        "uses": "JamesIves/github-pages-deploy-action@v4",
-                        "with": {
-                            "folder": "asl-pkgs",
-                            "clean": False,
+                        "name": "Sync repository",
+                        "uses": "jakejarvis/s3-sync-action@master",
+                        "env": {
+                            "AWS_S3_BUCKET": "repo-ai5a-net",
+                            "AWS_ACCESS_KEY_ID": "${{ secrets.B2_KEY_ID }}",
+                            "AWS_SECRET_ACCESS_KEY": "${{ secrets.B2_APPLICATION_KEY }}",
+                            "AWS_S3_ENDPOINT": "https://s3.us-west-000.backblazeb2.com/",
+                            "SOURCE_DIR": "asl-pkgs",
                         },
                     },
                 ],
