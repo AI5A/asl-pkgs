@@ -49,7 +49,7 @@ for codename in {' '.join(debian_versions)}; do
     popd
 
     # Create Release file
-    pushd asl-pkgs/deb/$codename/
+    pushd asl-pkgs/deb/$codename/dists/$codename/
       bash $repo/generate-release.sh $codename > Release
       gpg --armour --sign --detach-sign --output Release.gpg Release
       mv -v Release.gpg Release dists/$codename/
