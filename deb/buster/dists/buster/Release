@@ -4,10 +4,10 @@ Version: 1.0
 Architectures: amd64 armhf
 Components: main
 Description: AI5A AllStarLink Debian Repository
-Date: Fri, 25 Nov 2022 01:14:15 +0000
+Date: Fri, 25 Nov 2022 01:32:39 +0000
 MD5Sum:
- 110bc72fc9cfc1da3b1d716f45d4c5b9 9423 dists/buster/main/binary-amd64/Packages.gz
- be7b2d88940a2cf881601ab972f772c5 9440 dists/buster/main/binary-armhf/Packages.gz
+ 266d0e6fe9dc51f7a2c79ca11c60b8d0 22214 dists/buster/main/binary-amd64/Packages
+ 302443de81cba4e55af6d1f00bc1ef6a 22218 dists/buster/main/binary-armhf/Packages
  ba97eb75cf20031820762da346cdbc18 1921388 pool/main/asl-asterisk_1.4.23-12_amd64.deb
  0f3510584a4aa4857f1386942c812a14 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
  db5a3416435243dc4d1e54c77cb4d832 16997168 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
@@ -32,8 +32,8 @@ MD5Sum:
  f9548a8f058f789dbd9c3102229fe668 345960 pool/main/asl-dahdi_3.0.0.1.3_amd64.deb
  1184e47ae13ebcf13d9a9e011a669a37 571232 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
 SHA1:
- e9277c13c3d2a4dba21f4c98002e5d8eae7bc55e 9423 dists/buster/main/binary-amd64/Packages.gz
- 19af30ab9069cdf9b72f27d535febea15edade2d 9440 dists/buster/main/binary-armhf/Packages.gz
+ 7a79b3906859ea05a6a902a7289ca03d8db62fd5 22214 dists/buster/main/binary-amd64/Packages
+ 62a2c08aa30744f468bb9772352a79f84886da39 22218 dists/buster/main/binary-armhf/Packages
  22e04a30f15ac752bc928019059b0d8ac06dfe18 1921388 pool/main/asl-asterisk_1.4.23-12_amd64.deb
  fe1cfc5154b3179b99ca307bd1dc0edab22f9a17 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
  128084ce79626d8956cdeaaf0a8f993ad894a63e 16997168 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
@@ -58,8 +58,8 @@ SHA1:
  310d15d1137e67baaa2309ff739ee8c3e65e96f9 345960 pool/main/asl-dahdi_3.0.0.1.3_amd64.deb
  21aedafe32a50a21463aa03f8a1a523cf06c3cd3 571232 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
 SHA256:
- 6a780ae88aa182f10bda5f111617548a91dcc9b7048aecff659f4f2dec37982a 9423 dists/buster/main/binary-amd64/Packages.gz
- 7d34bef1f3b5ff69e736c1152a5346fd01620a6c7feba774d5d6431c9ee0f261 9440 dists/buster/main/binary-armhf/Packages.gz
+ 20ab5487faffbbbbc2cb85b17c9806f6781117d0cd7007fce379fba4a13426e9 22214 dists/buster/main/binary-amd64/Packages
+ 874de6ec26ea30c9681aa745457c4a8353b280d357f57da44b33d5aadb8b5a98 22218 dists/buster/main/binary-armhf/Packages
  1f1e1f954ed9af570a664b93a80cfc832af0ab8d96792d2e0c533de61b3d49ef 1921388 pool/main/asl-asterisk_1.4.23-12_amd64.deb
  d83d16f79b0b6bba635ac3facf48890c4bcd33523be58d4e810c758b6135c114 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
  b3f7c6f6ba102031e751e1b98037284b3124865ebe93a07efde8b1e70a832d65 16997168 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb

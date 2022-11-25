@@ -4,10 +4,10 @@ Version: 1.0
 Architectures: amd64 armhf
 Components: main
 Description: AI5A AllStarLink Debian Repository
-Date: Fri, 25 Nov 2022 01:14:11 +0000
+Date: Fri, 25 Nov 2022 01:32:36 +0000
 MD5Sum:
- 85849085412ed282e455282a710e2ae9 9405 dists/bullseye/main/binary-amd64/Packages.gz
- 50cec05d45b2e9d8acfb6768c7172cf2 9403 dists/bullseye/main/binary-armhf/Packages.gz
+ 75375d57ef1d12d38a19b5e68f434b8a 22145 dists/bullseye/main/binary-amd64/Packages
+ f2afb625ae723ba8b0171774af4b991f 22145 dists/bullseye/main/binary-armhf/Packages
  27ca519b105bc932b49631fd502ffc29 1923772 pool/main/asl-asterisk_1.4.23-12_amd64.deb
  0f3510584a4aa4857f1386942c812a14 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
  9b471f37121058e4965d5ad3e0a66e09 17123472 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
@@ -32,8 +32,8 @@ MD5Sum:
  18d5d4c4bce8be22c68bd46e3d53988c 345424 pool/main/asl-dahdi_3.0.0.1.3_amd64.deb
  83d53f2e3a3b4512116d3b011f0e686f 567716 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
 SHA1:
- 6b493df87a981bf6d87ee1b24f38c9fa200dc89a 9405 dists/bullseye/main/binary-amd64/Packages.gz
- 5d2d9a20c607b3570dd6f11a8d2bbeb2b06a8e06 9403 dists/bullseye/main/binary-armhf/Packages.gz
+ 890799f1d5a03251419a39bd9bca8e33707f9c78 22145 dists/bullseye/main/binary-amd64/Packages
+ 4f900299615c23cab302ef3a2e24753b35f13f71 22145 dists/bullseye/main/binary-armhf/Packages
  52722c503837f148c2706d9249177224a367b042 1923772 pool/main/asl-asterisk_1.4.23-12_amd64.deb
  fe1cfc5154b3179b99ca307bd1dc0edab22f9a17 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
  566b075f19182736f6185f858df01698e6f9e6ad 17123472 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
@@ -58,8 +58,8 @@ SHA1:
  38eea4d5d641cfd3e97ac705501d8ddb85116531 345424 pool/main/asl-dahdi_3.0.0.1.3_amd64.deb
  595cdd41208ff7977bce6c1390e5c84de7ad4589 567716 pool/main/asl-dahdi-dbgsym_3.0.0.1.3_armhf.deb
 SHA256:
- cbd3754c007dc21108da7a91e8ffae585bf5617bd6020e83560c4350041a9af8 9405 dists/bullseye/main/binary-amd64/Packages.gz
- f213cb5ad6d3940aeb85b8e63860385080f238e69b1c0a21b45e67d0ad9a1e68 9403 dists/bullseye/main/binary-armhf/Packages.gz
+ 56eec8de083bb2b8fa4c2a08713df228437488338ced3be200f9dcfa4cc3a2b2 22145 dists/bullseye/main/binary-amd64/Packages
+ c08a5923067350988423867131566306c910f3a6f32dd3ce40cadf9bd00f057d 22145 dists/bullseye/main/binary-armhf/Packages
  6fb6afbe74956c18921f5aa837497089d35ac8c3574a32344c516c4e8b012322 1923772 pool/main/asl-asterisk_1.4.23-12_amd64.deb
  d83d16f79b0b6bba635ac3facf48890c4bcd33523be58d4e810c758b6135c114 43088 pool/main/asl-dahdi-linux_3.0.1.20200801-0.2_all.deb
  fcaec7747ca1f6c5e2f96938d7a0cad00257fa14323ae40cd5aaef99287b465b 17123472 pool/main/asl-asterisk-dbg_1.4.23-12_amd64.deb
