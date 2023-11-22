@@ -10,6 +10,7 @@ ARTIFACTS = [
     ("AI5A/asl-dahdi", "fixes", "asl-dahdi-buster-x86_64", "build-x86.yml"),
 
     # arm
+    ("AI5A/asl-dahdi", "fixes", "asl-dahdi-bookworm-armv7l", "build-arm.yml"),
     ("AI5A/asl-dahdi", "fixes", "asl-dahdi-bullseye-armv7l", "build-arm.yml"),
     ("AI5A/asl-dahdi", "fixes", "asl-dahdi-buster-armv7l", "build-arm.yml"),
 
@@ -19,6 +20,7 @@ ARTIFACTS = [
     ("AI5A/asl", "fixes", "allstarlink-buster-x86_64", "build-x86.yml"),
 
     # arm
+    ("AI5A/asl", "fixes", "allstarlink-bookworm-armv7l", "build-arm.yml"),
     ("AI5A/asl", "fixes", "allstarlink-bullseye-armv7l", "build-arm.yml"),
     ("AI5A/asl", "fixes", "allstarlink-buster-armv7l", "build-arm.yml"),
 

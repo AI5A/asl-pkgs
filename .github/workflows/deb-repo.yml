@@ -45,6 +45,16 @@ jobs:
         repo: AI5A/asl-dahdi
         branch: fixes
         workflow_conclusion: success
+    - name: Download asl-dahdi-bookworm-armv7l
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        workflow: build-arm.yml
+        name: asl-dahdi-bookworm-armv7l
+        path: asl-dahdi-bookworm-armv7l
+        repo: AI5A/asl-dahdi
+        branch: fixes
+        workflow_conclusion: success
     - name: Download asl-dahdi-bullseye-armv7l
       uses: dawidd6/action-download-artifact@v2
       with:
@@ -92,6 +102,16 @@ jobs:
         workflow: build-x86.yml
         name: allstarlink-buster-x86_64
         path: allstarlink-buster-x86_64
+        repo: AI5A/asl
+        branch: fixes
+        workflow_conclusion: success
+    - name: Download allstarlink-bookworm-armv7l
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        workflow: build-arm.yml
+        name: allstarlink-bookworm-armv7l
+        path: allstarlink-bookworm-armv7l
         repo: AI5A/asl
         branch: fixes
         workflow_conclusion: success
@@ -153,7 +173,7 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install -y gcc dpkg-dev gpg
     - name: Move debs
-      run: "\nrepo=\"$(pwd)\"\nfor codename in buster bookworm bullseye; do\n    #\
+      run: "\nrepo=\"$(pwd)\"\nfor codename in bullseye bookworm buster; do\n    #\
         \ Create pool directory\n    mkdir -p asl-pkgs/deb/$codename/pool/main/\n\
         \    # Move the debs\n    pushd asl-pkgs/deb/$codename/pool/main/\n    for\
         \ pkg in asl-dahdi allstarlink asl-update-node-list; do\n        for file\
